@@ -1,0 +1,73 @@
+:root {
+  --main-bg: #f8f9fa;
+  --primary-color: #343a40;
+  --secondary-color: #495057;
+  --accent-color: #007bff;
+  --card-bg: #ffffff;
+  --text-color: #212529;
+}
+
+.card_info {
+  margin-top: 20px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card_info-title {
+  text-align: center;
+  width: 100%;
+}
+.card_info-left {
+  background-color: var(--main-bg);
+  width: 40%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.card_info-left-image {
+  height: 325px;
+  width: 230px;
+  margin: 20px;
+  display: flex;
+  justify-items: center;
+}
+.card_info-left-thumbnails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card_info-left-thumbnails-image {
+  height: 164px;
+  width: 115px;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+.card_info-left-thumbnails-image:hover {
+  transform: scale(2);
+}
+.card_info-right {
+  background-color: var(--main-bg);
+  width: 60%;
+}
+.card_info-right-h2 {
+  margin-left: 20px;
+}
+.card_info-right-card_description {
+  background-color: #bdbaba;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card_info-right-card_description-smallbox {
+  width: 50%;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=cardInfoZrobioneWczesniej.css.map */

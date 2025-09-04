@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0;
+}
+
+.main {
+  background-color: #22cd12;
+  display: flex;
+  width: 1440px;
+  padding: 0 40px;
+  margin: 0 auto;
+  height: 3000px;
+
+  &-left {
+    width: 260px;
+    background-color: var(--main-bg);
+
+    &-boxes {
+      width: 80%;
+      display: inline-grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+  }
+
+  &-mid {
+    justify-content: center;
+    align-items: center;
+    width: 840px;
+    background-color: var(--main-bg);
+
+  }
+
+  &-right {
+    width: 260px;
+    background-color: var(--main-bg);
+  }
+
+}
+

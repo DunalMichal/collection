@@ -1,0 +1,164 @@
+.cards-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.changeViewButtons {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.changeViewButtons button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: #0078d7;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.changeViewButtons button:hover {
+  background: #005a9e;
+}
+
+/* Pole wyszukiwania */
+.search-box-5 {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-box-6{
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Tabela */
+.cards-table-5 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.cards-table-5 th,
+.cards-table-5 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.cards-table-5 th {
+  background: #0078d7;
+  color: white;
+  font-weight: bold;
+}
+
+.cards-table-5 tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Wiersze główne */
+.main-row-5 {
+  background: #e6f3ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Podwiersze */
+.sub-row-5 {
+  display: none;
+  background: #fffaf0;
+}
+
+.sub-row-5 td {
+  font-style: italic;
+  color: #444;
+}
+
+/* Efekt hover */
+.cards-table-5 tr:hover {
+  background: #f1f1f1;
+}
+//////////////////////////////////////////////////////////////////////////////////////
+.table-controls {
+  background: #f5f5f5;
+  height: 32px;
+}
+
+.table-controls .controls {
+  display: flex;
+  justify-content: flex-end; /* wyrównanie w prawo */
+  gap: 6px;
+}
+
+.table-controls .controls span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #fff;
+}
+
+.table-controls .controls span:hover {
+  background: #ddd;
+}
+
+.table-wrapper {
+  position: relative;       /* potrzebne, żeby pozycjonować przyciski w środku */
+  display: inline-block;    /* tabela + przyciski jako całość */
+}
+
+.cards-table-5 {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cards-table-5 th, .cards-table-5 td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+.view-buttons {
+  position: absolute;
+  top: 4px;      /* odstęp od górnej ramki */
+  right: 6px;    /* odstęp od prawej ramki */
+  display: flex;
+  gap: 4px;
+}
+
+.view-buttons span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  background: #fff;
+  font-weight: bold;
+  user-select: none;
+}
+
+.view-buttons span:hover {
+  background: #ddd;
+}
+
