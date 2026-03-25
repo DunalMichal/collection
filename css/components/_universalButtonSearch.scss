@@ -1,0 +1,30 @@
+@use "../variables" as *;
+.buttonSearch {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: #1976d2; // niebieski przycisk
+  color: white;
+  font-size: 18px; // rozmiar dla ikony
+  font-weight: bold;
+  border: none;
+  border-radius: 50%; // okrągły przycisk
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+
+  &:hover {
+    background-color: #1565c0;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  i {
+    pointer-events: none; // ikona nie blokuje kliknięcia
+  }
+}

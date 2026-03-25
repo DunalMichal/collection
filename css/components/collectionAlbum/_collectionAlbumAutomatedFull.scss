@@ -1,0 +1,27 @@
+@use "../../variables" as *;
+
+.collectionAlbumAutomatedFull {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  //display: flex;
+  //justify-content: center;
+  //gap: 20px; // odstęp między stronami w rozkładówce
+
+  &-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  &-album {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+

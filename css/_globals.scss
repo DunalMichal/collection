@@ -1,46 +1,46 @@
-*{
+@use "variables" as *;
+
+* {
   box-sizing: border-box;
 }
 
 
-body{
+body {
+  background: linear-gradient(180deg, $main-bg, $main-bg-end);
   margin: 0;
+  height: 150vh;
+  color: $text-color-main;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .main {
-  background-color: #22cd12;
   display: flex;
   width: 1440px;
   padding: 0 40px;
   margin: 0 auto;
-  height: 3000px;
 
-  &-left {
+  &-aside {
+    margin-top: 78px;
     width: 260px;
-    background-color: var(--main-bg);
-
-    &-boxes {
-      width: 80%;
-      display: inline-grid;
-      justify-content: center;
-      align-items: center;
-    }
-
-
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    padding: $standard-spacing;
+    border-radius: $radius;
+    min-height: 520px;
   }
 
-  &-mid {
-    justify-content: center;
-    align-items: center;
-    width: 840px;
-    background-color: var(--main-bg);
-
+  &-main {
+    width: calc(100% - 260px - $standard-spacing);
+    margin-left: $standard-spacing;
+    padding: $standard-spacing;
   }
 
-  &-right {
-    width: 260px;
-    background-color: var(--main-bg);
+  &-inner{
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
   }
+
 
 }
+
 

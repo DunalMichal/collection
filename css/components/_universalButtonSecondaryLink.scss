@@ -1,0 +1,20 @@
+@use "../variables" as *;
+
+a.buttonSecondaryLink {
+  display: inline-block;
+  width: 200px;
+  background: transparent;
+  color: $text-color-main;
+  border: 1px solid $accent-color-5;
+  padding: $standard-gap;
+  border-radius: $radius;
+  margin: $standard-gap;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+a.buttonSecondaryLink:hover {
+  background: $accent-color-3;
+}

@@ -7,13 +7,80 @@
 @use "layouts/header";
 @use "layouts/collectionInfo";
 @use "layouts/slider";
+@use "addcard";
+@use "layouts/headerMain";
+@use "layouts/headerMainLogo";
+@use "layouts/headerMainSearchBar";
+@use "layouts/headerMainNotifications";
+@use "layouts/collectionPageHeader";
+@use "layouts/collectionPagePremiumBox";
+@use "layouts/collectionPageMoreInfo";
+@use "layouts/collectionPageCollectionDescription";
+@use "layouts/collectionPageDescriptionGameGuide";
+@use "layouts/collectionPageDescriptionProduct";
+@use "layouts/collectionPageDescriptionCardsAmount";
+@use "layouts/collectionPageDescriptionCardsExport";
+@use "layouts/collectionPageDescriptionCollectionListTable";
+@use "layouts/formSectionContainer";
+@use "layouts/test";
+@use "layouts/mainSectionContainer";
+@use "layouts/viewCollectionTable";
+@use "layouts/viewCollectionList";
+@use "layouts/getLastAddCard";
+@use "layouts/getLastAddCollection";
+
 
 @use "pages/collection";
 @use "pages/index";
+@use "pages/userpage";
+@use "pages/register";
 
 @use "components/albumTile";
 @use "components/infoBox";
 @use "components/progressBar";
-@use "components/collectionTable";
+@use "components/collectionTable/collectionTable";
 @use "components/cardInfo";
+@use "components/collectionList";
+@use "components/collectionListSearchTable";
+@use "components/collectionTable/collectionTableBasic";
+@use "components/collectionTable/collectionTableAdvanced";
+@use "components/collectionAlbum/collectionAlbumPage";
+@use "components/collectionAlbum/collectionAlbumCardSlot";
+@use "components/collectionAlbum/collectionAlbumCardSlotAdvanced";
+@use "components/collectionAlbum/collectionAlbumPageAutomated";
+@use "components/collectionAlbum/collectionAlbumAutomatedFull";
+@use "components/collectionAlbum/collectionAlbumNavigationMenu";
+@use "components/universalButtonAdd";
+@use "components/universalButtonSubtract";
+@use "components/universalButtonDelete";
+@use "components/universalButtonSearch";
+@use "components/universalButtonMain";
+@use "components/universalButtonSecondary";
+@use "components/universalButtonSecondaryLink";
+@use "components/sectionHeader";
+@use "components/formTextInput";
+@use "components/formSaveButton";
+@use "components/formReadOnlyInput";
+@use "components/addNewCollection";
+@use "components/formGenerateCheckboxTree";
+@use "components/viewCollectionSwitcher";
+
+
+
+
+@use "components/userPage/userPageDashboardLeftSidebar";
+@use "components/userPage/userPageDashboard";
+@use "components/userPage/userPageDashboardInfo";
+@use "components/userPage/userPageDashboardUserBadge";
+@use "components/userPage/userPageUserLeftButtonsSidebar";
+@use "components/userPage/userPageMainHead";
+@use "components/buttonTypeDashboardInfo";
+@use "components/buttonTypeDashboardQuickActions";
+@use "components/userPage/userPageDashboardProgressBar";
+@use "components/userPage/userPageDashboardLastActions";
+@use "components/userPage/userPageLastActionLastAddcard";
+@use "components/userPage/userPageLastActionLastAddCollection";
+@use "components/userPage/userPageLastActionLastSwap";
+@use "components/userPage/userPageLastActionLastTransaction";
+
 

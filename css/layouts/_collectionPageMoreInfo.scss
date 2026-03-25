@@ -1,0 +1,75 @@
+@use "../variables" as *;
+
+
+.collection_moreInfo {
+  background: linear-gradient($accent-color-3, $accent-color-4);
+  width: 100%;
+  overflow: hidden;
+  margin-top: $standard-spacing-half;
+  border-radius: $radius;
+  display: flex;
+  flex-direction: column;
+  color: $text-color-main;
+  justify-content: center;
+
+  &-hidden {
+    display: none;
+    margin: $standard-gap;
+
+    &.visible{
+      display: block;
+      height: auto;
+    }
+
+    &-tabs {
+      display: flex;
+      gap: $standard-gap;
+      margin-bottom: $standard-gap;
+      flex-wrap:wrap;
+
+      &-tab {
+        width: 200px;
+        padding: $standard-gap;
+        border-radius: $radius;
+        border: 1px solid $accent-color-5;
+        background: linear-gradient(to right, $accent-color-5, $accent-color-1);;
+
+        cursor: pointer;
+        transition: 0.2s
+      }
+      &-tab_active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent)
+      }
+
+      &-tab_content {
+        display: none;
+        animation: fadein 0.3s forwards;
+      }
+      &-tab_content.active {
+        display: block
+      }
+    }
+
+  }
+
+
+}
+.card:hover {
+  transition: all 0.3s ease;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+

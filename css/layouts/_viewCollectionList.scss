@@ -1,0 +1,47 @@
+@use "../variables" as *;
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+
+
+  &-header {
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+    padding: $standard-gap $standard-gap;
+    gap: $standard-gap-double;
+
+
+    &-item{
+      white-space: nowrap;
+    }
+  }
+
+  &-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+    align-items: center;
+    padding: $standard-gap;
+    background: $primary-color;
+    border-radius: $radius;
+    border: 1px solid $accent-color-1;
+    justify-content: space-between;
+    min-height: 50px;
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+
+

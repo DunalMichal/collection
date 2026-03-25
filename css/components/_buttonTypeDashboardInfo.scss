@@ -1,0 +1,23 @@
+@use "../variables" as *;
+
+
+.dashboard-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+
+  &-number {
+    font-weight: 600;
+    color: $text-color-muted;
+    font-size: $font-size-large;
+    display: block;
+  }
+
+  &-text {
+    font-weight: 600;
+    color: $text-color-muted;
+    font-size: $font-size-medium;
+  }
+}

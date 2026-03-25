@@ -1,0 +1,30 @@
+@use "../variables" as *;
+.form_checkbox_box {
+  display: flex;
+  flex-direction: column;
+  gap: $standard-gap-half; // używamy tej samej zmiennej odstępu
+  margin-top: $standard-gap-half;
+
+  &-checkbox {
+    display: flex;
+    align-items: center;
+    gap: $standard-gap-half;
+
+    input[type="checkbox"] {
+      accent-color: $secondary-color; // dopasowane do kolorystyki projektu
+      cursor: pointer;
+    }
+
+    label {
+      cursor: pointer;
+      color: darken($text-color-muted, 10%);
+      font-size: $font-size-medium;
+    }
+  }
+}
+
+.form_readonly_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $standard-gap; // zachowuje spójny rytm z .form_box
+}

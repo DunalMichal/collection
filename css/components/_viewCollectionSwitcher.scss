@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+.view_switcher {
+  display: flex;
+  justify-content: flex-end;
+  margin: $standard-gap auto;
+
+  &-button {
+    background: none;
+    border: none;
+    padding: $standard-gap;
+    cursor: pointer;
+    font-size: $font-size-medium;
+    color: $text-color-muted;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &.active {
+      background-color: $text-color-muted;
+      color: $text-color-main;
+      font-weight: $font-weight-bold;
+
+    }
+
+  }
+}
+.cards-view {
+  display: none;
+}
+
+.cards-view.active {
+  display: block;
+}

@@ -1,0 +1,210 @@
+@use "../variables" as *;
+
+
+.card {
+  background: $primary-color;
+  color: $text-color-main;
+  border-radius: $radius;
+  padding: $standard-gap;
+  margin-bottom: $standard-gap;
+
+  &-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $standard-gap-double;
+    padding: $standard-gap;
+    align-items: center;
+
+    &-search {
+      padding: $standard-gap;
+      border-radius: $radius;
+      border: 3px solid $accent-color-5;
+      font-size: $font-size-medium;
+    }
+
+    &-input_select {
+      padding: $standard-gap;
+      border-radius: $radius;
+      border: 5px solid $accent-color-7;
+      font-size: $font-size-medium;
+    }
+
+    &-buttons {
+      margin-left: auto;
+      display: flex;
+      gap: $standard-gap;
+    }
+  }
+}
+
+/* ===== BUTTONS Chyba tutaj nie potrzebne w takiej formie w jakiej obecnie są ===== */
+.btn {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-5));
+  color: #9e75ca;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: scale(1.05)
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+}
+
+.btn.small {
+  font-size: 13px;
+  padding: 6px 10px
+}
+
+
+/* ===== TABLE ===== */
+.table-main {
+  overflow: auto
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-small;
+}
+
+th, td {
+  padding: $standard-gap;
+  border-bottom: 1px solid #22cd12;
+  border: 1px solid yellow;
+
+
+}
+
+th {
+  background: $primary-color-end;
+}
+
+.placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, .15);
+}
+
+.status-chip {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #e9fbe7;
+  color: #15803d;
+}
+
+/* ===== ALBUM ===== */
+.album-grid {
+  display: grid;
+  grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--gap);
+}
+
+.album-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.album-card:hover {
+  transform: scale(1.05)
+}
+
+.album-sq {
+  width: 100%;
+  padding-top: 140%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.album-sq span {
+  position: absolute;
+  inset: 0
+}
+
+.album-meta {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  background: #f8f9fa;
+}
+
+.tab.active {
+  background: var(--secondary);
+  color: #fff;
+  border-color: var(--secondary);
+}
+
+.tab-content {
+  display: none
+}
+
+.tab-content.active {
+  display: block
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto
+}
+
+.modal-content {
+  background: #fff;
+  color: #111;
+  padding: 20px;
+  border-radius: 16px;
+  width: 340px;
+  box-shadow: var(--shadow);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* ===== UTILS ===== */
+.hidden {
+  display: none
+}

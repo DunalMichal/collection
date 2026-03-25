@@ -28,4 +28,3 @@ function getCard($id)
 
     return $row;
 }
-//"SELECT * FROM cards WHERE ID = ?";

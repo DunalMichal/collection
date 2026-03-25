@@ -1,0 +1,31 @@
+@use "../variables" as *;
+
+.clipboardCopy_container {
+  border-radius: $radius;
+  padding: $standard-gap;
+  margin-top: $standard-gap;
+
+  .p {
+    font-size: $font-size-small;
+    color: $text-color-main;
+  }
+  .textarea {
+    width: 100%;
+    height: 100%;
+  }
+  .hidden {
+    display: none;
+  }
+  #missing-list {
+    width: 100%;
+    height: 150px;
+    margin-top: $standard-gap;
+    padding: $standard-gap;
+    border: $text-color-main;
+    border-radius: $radius;
+    font-size: $font-size-medium;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+}
+

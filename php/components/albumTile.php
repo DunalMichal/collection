@@ -1,22 +1,21 @@
 <?php
-function generate_albumTile(){
+function generate_albumTile($collection){
 
 
     ?>
-<div class="albumTile">
     <div class="albumTile_image">
-        <img src="/images/topps-main-Euro2024.jpg" alt="foto">
+        <img src="/images/collectionsCovers/topps-main-Euro2024.jpg" alt="foto">
     </div>
     <div class="albumTile_description">
-        <span class="albumTile_description_title">Full Collection Name</span>
+        <span class="albumTile_description_title"><?=$collection["Name"]?></span>
         <br>
-        <span class="albumTile_description_details">Year</span>
+        <span class="albumTile_description_details"><?=$collection["YearOfPublish"]?></span>
         <br>
-        <span class="albumTile_description_details">Total Cards</span>
+        <span class="albumTile_description_details"><?=$collection["cardsCount"]?></span>
         <br>
-        <span class="albumTile_description_details">Distribution</span>
+        <span class="albumTile_description_details"><?=$collection["Description"]?></span>
     </div>
-</div>
+    </a>
 <?php
 }
 

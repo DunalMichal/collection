@@ -5,7 +5,7 @@ function generate_navigation()
 
     $categories = getCategories();
 
-
+//print_r($categories);
     ?>
     <div class="nav">
         <div class="nav_header">
@@ -21,18 +21,19 @@ function generate_navigation()
                             foreach ($category["SubCategories"] as $subcategory) {
                                 ?>
                                 <li class="nav_header_menu_category_subcategory_category">
-                                    <span><a href="collection.php?id=<?=$subcategory["ID"]?>"><?= $subcategory["CategoryName"] ?></a></span>
+                                    <span><a href="category.php?id=<?=$subcategory["ID"]?>"><?= $subcategory["CategoryName"] ?></a></span>
                                 </li>
                                 <?php
                             }
                             ?>
+
                         </ul>
                     </li>
                     <?php
                 }
 
                 ?>
-
+                <a href="userPage.php">Strona Użytkownika</a>
             </ul>
         </div>
     </div>

@@ -1,0 +1,8 @@
+@use "../variables" as *;
+
+.sectionHeader{
+  margin-bottom: $standard-gap;
+  font-size: $font-size-large;
+  border-bottom: 2px solid $text-color-main;
+  padding-bottom: $standard-gap-half;
+}

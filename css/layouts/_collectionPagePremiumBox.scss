@@ -1,0 +1,56 @@
+@use "../variables" as *;
+
+.page_premium_container {
+  max-width: 100%;
+  height: 80px;
+  margin-top: $standard-spacing-half;
+  padding: $standard-spacing-half;
+  background: linear-gradient($accent-color-3, $accent-color-4);
+  border-radius: $radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &-text {
+      color: $text-color-main;
+      font-size: $font-size-medium;
+      margin: $standard-gap;
+
+      strong {
+        font-size: $font-weight-bold;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $text-color-main;
+
+      &-premium {
+        display: inline-block;
+        background: $accent-color-3;
+        border-radius: $radius;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        color: $text-color-main;
+
+        &:hover {
+        }
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+    }
+  }
+}
+

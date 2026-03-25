@@ -1,0 +1,157 @@
+@use "../variables" as *;
+
+.cards-table-container {
+  margin-top: $standard-gap-half;
+  width: 100%;
+  background: linear-gradient(to right, $accent-color-1, $accent-color-5);
+  font-size: $font-size-small;
+  color: $text-color-main;
+  border-radius: $radius;
+  padding: $standard-gap;
+  overflow-x: auto;
+
+  &-table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &-main_table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    color: $primary-color;
+    border-radius: $radius;
+    overflow: hidden;
+
+    th, td {
+      padding: $standard-gap;
+      border: 1px solid $main-bg;
+      text-align: left;
+      word-wrap: break-word;
+    }
+
+    .filter-input, .filter-select {
+      width: 100%;
+      padding: $standard-gap-half;
+      font-size: $font-size-medium;
+      border-radius: $radius;
+      border: 1px solid $main-bg;
+      background-color: $text-color-muted;
+    }
+
+    &-tableHead {
+      background: linear-gradient($accent-color-4, $primary-color-end);
+      color: $text-color-main;
+      font-weight: bold;
+    }
+
+    &-tableBody {
+      tr:nth-child(odd) {
+        background-color: #EEEEEE;
+      }
+
+      tr:nth-child(even) {
+        background-color: $text-color-main;
+      }
+
+      tr:hover {
+        background-color: $accent-color-5;
+      }
+    }
+  }
+}
+
+// --- Nowość: styl albumu bez przerwy, z cieniem pośrodku
+
+.hidden {
+  display: none !important;
+  opacity: 0;
+}
+
+.fade-container {
+  position: relative;
+  width: 100%;
+}
+
+.fade-element {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Album grid dopasowany kolorystycznie do stylu powyżej */
+/* kontener obu stron albumu obok siebie */
+.album-book {
+  display: flex;
+  justify-content: center; /* lub space-between */
+  gap: 10px; /* odstęp między stronami */
+}
+
+.album-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 karty w rzędzie */
+  gap: 12px;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-sq {
+  width: 100%;
+  padding-top: 150%; /* proporcja 2:3 */
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.album-sq-empty {
+  width: 100%;
+  padding-top: 150%; /* proporcja 2:3 */
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f9f9f9, #e0e0e0); /* lekki gradient imitujący kartę */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* cień zewnętrzny */
+  border: 1px dashed rgba(0,0,0,0.1); /* linia przerywana */
+  transition: all 0.3s;
+}
+.album-sq-empty::after {
+  content: " "; /* można dodać ikonę „pustej karty” lub pozostawić puste */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 5%;
+  background: rgba(0,0,0,0.05); /* delikatny pasek/ozdoba */
+  border-radius: 2px;
+}
+
+.album-sq > span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: 10px;
+}
+
+.album-meta {
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-width: 100%;
+}
+

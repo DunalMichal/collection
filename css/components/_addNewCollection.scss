@@ -1,0 +1,21 @@
+@use "../variables" as *;
+
+.subcategory {
+  display: none;
+}
+
+.subcategory.show {
+  display: block;
+}
+
+.form_section-checkboxes {
+  display: flex;
+  gap: $standard-gap;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.checkbox-tree-container {
+  margin: 0;
+  min-width: 200px;
+}

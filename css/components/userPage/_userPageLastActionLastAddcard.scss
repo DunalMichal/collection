@@ -1,0 +1,41 @@
+@use "../../variables" as *;
+
+.lastAddCard {
+  display: flex;
+  flex-direction: column;
+  gap: $standard-gap;
+
+
+  &-title {
+    color: $text-color-main;
+  }
+
+  &-grid {
+    display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    gap: $standard-gap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    justify-content: center;
+    justify-items: center;
+
+    //border: 1px solid red;
+  }
+  .card{
+    //border: 1px solid blue;
+    justify-items: center;
+    justify-content: center;
+    margin-top: $standard-gap;
+  }
+
+  .card-placeholder {
+    width: 60px;
+    height: 80px;
+    background: #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+}

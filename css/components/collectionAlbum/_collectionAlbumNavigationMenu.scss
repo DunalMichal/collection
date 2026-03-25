@@ -1,0 +1,31 @@
+@use "../../variables" as *;
+
+.navigation {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $standard-gap;
+    margin-bottom: $standard-gap;
+    background: transparent;
+    border-radius: $radius;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &-buttons {
+      background: $text-color-main;
+      border: 1px solid #ccc;
+      border-radius: $radius;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    &-buttons:hover {
+      background: $text-color-muted;
+    }
+  }
+}

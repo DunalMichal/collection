@@ -1,0 +1,47 @@
+@use "../../variables" as *;
+
+.dashboard-menu {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      color: $text-color-main;
+      font-size: $font-size-small;
+      width: 100%;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover,
+      &:focus {
+        background: $text-color-muted;
+        outline: none;
+      }
+
+      &.active {
+        background: $text-color-muted;
+        color: $text-color-main;
+        font-weight: bold;
+      }
+
+      .muted.small {
+        margin-left: auto; // jeśli używasz ikonek po prawej
+        font-size: $font-size-small;
+        color: $text-color-muted;
+      }
+    }
+  }
+}

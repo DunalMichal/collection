@@ -1,26 +1,23 @@
 <?php
-require "php/layouts/header.php";
-require "php/layouts/collectionList.php";
-require "php/layouts/navigation.php";
-require "php/layouts/slider.php";
-require "php/layouts/collectionInfo.php";
-require "php/components/infoBox.php";
-require "php/components/progressBar.php";
-require "php/components/collectionTable.php";
-require "php/api/getCollections.php";
-require "php/api/getCollectionsTable.php";
-require "php/api/getCollectionsInfo.php";
+include "php/layouts/header.php";
+include "php/layouts/navigation.php";
+require "php/components/userPage/userPageDashboardLeftSidebar.php";
+require "php/components/userPage/userPageMainHead.php";
+require "php/components/userPage/userPageDashboard.php";
+require "php/components/userPage/userPageDashboardInfo.php";
 
+include "php/api/getCollectionsList.php";
 
-
-//$collectionData = getCollections(1);
-//$collection = getCollections($_GET["id"]);
-$collectionTableData = getTableData();
-$collectionInfo = getCollectionInfo($_GET["id"]);
-
-print_r($collectionInfo);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    print_r($_SESSION);
+}
+if (!isset($_SESSION["ID"])) {
+    header("Location: login.php");
+}
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,68 +28,47 @@ print_r($collectionInfo);
     <meta name="description" content="An example webpage.">
     <link rel="stylesheet" href="css/Index.css">
     <script src="js/menu.js"></script>
-    <script src="js/tableHiddenRow.js"></script>
-    <script src="js/sliderAutomatic.js"></script>
+    <script src="js/userPageDashboardActionButtons.js"></script>
 </head>
 
 <body>
 <?php
-generate_header();
-generate_navigation();
-
+generateHeaderMain();
 ?>
 
-
 <main class="main">
-    <section class="main-left">
-        <div class="main-left-boxes">
-            <?php
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            ?>
-        </div>
-    </section>
 
-    <section class="main-mid">
+
+    <aside class="main-aside">
         <?php
-        echo "<pre>";
-        print_r($collectionInfo);
-        echo "</pre>";
-        generate_slider();
-        generate_collectionInfo($collectionInfo);
-        generate_collectionTable($collectionTableData);
+        generateSideBarFromUserPage();
         ?>
+    </aside>
 
 
-        <div class="album">
-            <br>
-            <br>
+    <section class="main-main">
 
-            <div class="album-page">
-                <div class="card-slot"><img src="karty/karta1.jpg" alt="Karta 1"></div>
-                <div class="card-slot"><img src="karty/karta2.jpg" alt="Karta 2"></div>
-                <div class="card-slot"></div>
-                <div class="card-slot"><img src="karty/karta3.jpg" alt="Karta 3"></div>
-                <div class="card-slot"></div>
-                <div class="card-slot"></div>
-                <div class="card-slot"><img src="karty/karta4.jpg" alt="Karta 4"></div>
-                <div class="card-slot"></div>
-                <div class="card-slot"></div>
+        <div class="user_main">
+            <div class="user_main-left">
+                Twoje Kolekcje
+                <?php
+                $userCollections = getCollectionsList();
+                foreach ($userCollections as $collection) {
+                    echo "<div>" . $collection['NAME'] . "</div>";
+                }
+
+
+                ?>
+
+            </div>
+            <div class="user_main-right">
+                <?php
+                generateUserPageDashboardInfo();
+                ?>
             </div>
         </div>
     </section>
 
-
-    <section class="main-right">
-        <div class="main-right-boxes">
-            <?php
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            generate_infoBox("General statistics of cards on the site", ["1", "2", "3", "4"]);
-            ?>
-        </div>
-    </section>
 
 </main>
 </body>

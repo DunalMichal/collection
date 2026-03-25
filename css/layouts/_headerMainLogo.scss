@@ -1,0 +1,33 @@
+@use "../variables" as *;
+
+
+.header-main-logo {
+  display: flex;
+  align-items: center;
+  gap: $standard-gap;
+
+  &-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  &-title {
+    display: flex;
+    flex-direction: column;
+    gap: $standard-gap;
+
+    &-main {
+      color: $text-color-main;
+      font-size: $font-size-large;
+    }
+
+    &-second {
+      color: $text-color-muted;
+      font-size: $font-size-small;
+    }
+}
+
+
+}

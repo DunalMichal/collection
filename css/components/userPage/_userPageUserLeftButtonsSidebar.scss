@@ -1,0 +1,82 @@
+@use "../../variables" as *;
+
+.sidebar {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: $standard-gap;
+
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    gap: $standard-gap;
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+
+
+    &-button {
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      color: $text-color-main;
+      font-size: $font-size-small;
+      width: 100%;
+      padding: $standard-spacing;
+
+      &:hover,
+      &:focus {
+        background: $text-color-muted;
+        outline: none;
+      }
+    }
+
+    .muted.small {
+      margin-left: auto; // przesuwa znak ↗
+      font-size: $font-size-small;
+      color: $text-color-muted;
+    }
+  }
+
+  &-quick {
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    padding-top: 12px;
+    font-size: $font-size-small;
+
+    &-title {
+      color: $text-color-main;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+
+      li {
+        list-style: none;
+      }
+
+      a {
+        color: $text-color-muted;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover,
+        &:focus {
+          background: $text-color-muted;
+          color: $text-color-main;
+        }
+      }
+    }
+  }
+}

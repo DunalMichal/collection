@@ -1,0 +1,30 @@
+@use "../variables" as *;
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  gap: $standard-gap-double;
+  padding: $standard-gap $standard-gap;
+  scroll-behavior: smooth;
+
+  &-item {
+    width: 150px;
+    height: 225px;
+    flex: 0 0 auto;
+    border-radius: $standard-gap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: $main-bg;
+    font-size: $font-size-large;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  &-item:hover {
+    transform: scale(1.05);
+  }
+
+
+}

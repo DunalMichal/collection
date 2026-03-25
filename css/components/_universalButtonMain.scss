@@ -1,0 +1,11 @@
+@use "../variables" as *;
+
+.buttonMain {
+  background: linear-gradient(to right, $accent-color-1, $accent-color-5);
+  color: $text-color-muted;
+  padding: $standard-spacing-half;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s
+}

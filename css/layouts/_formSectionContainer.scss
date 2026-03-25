@@ -1,0 +1,21 @@
+@use "../variables" as *;
+
+
+.form_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+
+    &-input {
+      width: calc(100% + 2 * $standard-gap);
+      margin-left: -$standard-gap;
+
+
+    }
+  }
+}

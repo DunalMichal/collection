@@ -1,0 +1,21 @@
+.album {
+  margin: auto;
+  min-height: 100vh; /* pełna wysokość okna */
+  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center; /* pionowe wyśrodkowanie */
+
+
+  &-page {
+    background: #3e4147;
+    border: 10px solid #1e1f21;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+  }
+
+}

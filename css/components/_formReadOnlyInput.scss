@@ -1,0 +1,67 @@
+@use "../variables" as *;
+
+.form_readonly {
+  display: inline-block;
+  //width: calc(20% - 28px); // jak .form_box
+  width: 100%;
+  margin: $standard-gap;    // jak .form_box
+  padding: $standard-gap;   // jak .form_box
+  border: 1px dashed $text-color-muted; // readonly border
+  border-radius: $radius;   // jak .form_box
+  box-sizing: border-box;   // jak .form_box
+  text-align: left;
+  vertical-align: top;
+  position: relative;
+  background-color: rgba($text-color-muted, 0.1); // readonly tło
+  transition: background-color 0.2s ease;
+
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: $standard-gap-half;
+    right: $standard-gap-half;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
+    color: $secondary-color;
+  }
+
+  &-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: $standard-gap-half;
+    padding-left: $standard-gap-double;
+  }
+
+  &-input {
+    width: 100%;             // jak .form_box-input
+    box-sizing: border-box;   // jak .form_box-input
+    padding: $standard-gap-half; // jak .form_box-input
+    border-radius: $radius;   // jak .form_box-input
+    border: 1px solid $text-color-muted; // jak .form_box-input
+    background-color: $text-color-main; // readonly tło
+    color: darken($text-color-muted, 25%);
+    cursor: not-allowed;
+    font-style: italic;
+  }
+
+  text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -$standard-gap-half;
+    border-width: $standard-gap-half;
+    border-style: solid;
+    border-color: $text-color-muted transparent transparent transparent;
+  }
+
+  &-info:hover &-text,
+  &-text:focus &-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:hover {
+    background-color: rgba($text-color-muted, 0.2);
+  }
+}

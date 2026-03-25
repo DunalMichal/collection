@@ -1,0 +1,47 @@
+@use "../variables" as *;
+
+.description_container {
+  padding: $standard-gap;
+
+
+  &-album_info {
+    display: flex;
+    gap: $standard-gap;
+    align-items: flex-start;
+
+    &-cover {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 180px));
+      gap: $standard-gap;
+
+      .placeholder2 {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 12px;
+        background-color: #d9d9d9;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+          transform: scale($standard-scale);
+        }
+
+        &-description {
+
+          h3 {
+            font-size: $font-size-medium;
+            font-weight: $font-weight-bold;
+            margin-bottom: $standard-gap;
+          }
+
+          p {
+            font-size: $font-size-medium;
+            margin-bottom: $standard-gap;
+          }
+        }
+      }
+    }
+  }
+}
+

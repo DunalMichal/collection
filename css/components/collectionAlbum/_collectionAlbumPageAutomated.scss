@@ -1,0 +1,52 @@
+@use "../../variables" as *;
+
+.collectionAlbumAutomated {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: $standard-gap;
+  margin-bottom: $standard-gap-double;
+
+  .album-page {
+    display: none;
+
+    &.active,
+    &.visible {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      background: linear-gradient(135deg, #0f1724, #071021);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      min-width: 300px;
+      flex: 1 1 300px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .card-number {
+        font-size: $font-size-small;
+        font-weight: bold;
+        color: $text-color-muted;
+      }
+
+      .card-slot,
+      .card-slot-advanced,
+      .card-slot2 {
+        width: 100%;
+        aspect-ratio: 2.5 / 3.5;
+      }
+
+      img.card-placeholder {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+}

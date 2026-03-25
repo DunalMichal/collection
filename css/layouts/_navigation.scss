@@ -1,19 +1,21 @@
+@use "../variables" as *;
 
 .nav {
-  background-color: var(--secondary-color);
-  color: black;
+  background-color: $main-bg-end;
+  color: $text-color-main;
+  //border-bottom: 1px solid $text-color-muted;
 
   &_header {
-    height: 80px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: $standard-gap;
 
     &_menu {
       display: flex;
       list-style: none;
-      gap: 1rem 2rem;
+      gap: 2rem;
       position: relative;
       justify-content: center;
 
@@ -34,9 +36,9 @@
           top: 100%;
           left: 0;
           display: none;
-          background-color: white;
-          color: black;
-          padding: 2rem;
+          background-color: $main-bg-end;
+          color: $text-color-main;
+          padding: $standard-gap;
           grid-template-columns: repeat(3, 1fr);
           width: 600px;
           box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -45,21 +47,18 @@
           &_category {
             display: block;
             margin-bottom: 0.5rem;
+            padding: $standard-gap;
 
             a {
-              color: #333;
+              color: $text-color-muted;
               text-decoration: none;
 
               &:hover {
-                color: #007bff;
+                color: $text-color-main;
               }
             }
           }
         }
-
-        //&:hover &_subcategory {
-        //  display: grid;
-        //}
       }
     }
   }

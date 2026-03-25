@@ -2,8 +2,8 @@
 require "php/api/connect.php";
 require "php/api/getCategories.php";
 
-function generate_header(){
-//    echo(json_encode(getCategories()));
+function generate_header()
+{
     ?>
     <header class="header">
         <div class="header-left">
@@ -24,20 +24,6 @@ function generate_header(){
         </div>
 
         <div class="header-right">
-<!--            <div class="header-right-login-panel">-->
-<!--                <form class="header-right-login-form">-->
-<!--                    <div class="header-right-login-form-userName">-->
-<!---->
-<!--                        <input type="text" id="username" name="username" placeholder="Username" required>-->
-<!--                    </div>-->
-<!--                    <div class="header-right-login-form-password">-->
-<!--                        <input type="text" id="password" name="password" placeholder="Password" required>-->
-<!--                    </div>-->
-<!--                    <div class="header-right-login-form-buttonLogIn">-->
-<!--                        <button type="submit">Zaloguj sie</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
             <div class="header-right-wrapper">
                 <div class="header-right-wrapper-logo"></div>
                 <div class="header-right-wrapper-logo"></div>
@@ -47,5 +33,5 @@ function generate_header(){
 
         </div>
     </header>
-<?php
+    <?php
 }

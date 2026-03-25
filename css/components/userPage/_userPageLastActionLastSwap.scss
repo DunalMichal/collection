@@ -1,0 +1,61 @@
+@use "../../variables" as *;
+
+
+.lastSwaps {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &-title {
+    color: $text-color-main;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: $standard-gap;
+  }
+}
+
+.swapBox {
+  background: rgba(255, 255, 255, 0.02);
+  padding: $standard-spacing;
+  border-radius: $radius;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $standard-spacing;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-label {
+      font-weight: 500;
+      color: $text-color-muted;
+    }
+
+    &-value {
+      font-weight: 600;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.status-done {
+  color: green;
+}
+
+.status-pending {
+  color: orange;
+}
+
+.status-rejected {
+  color: red;
+}

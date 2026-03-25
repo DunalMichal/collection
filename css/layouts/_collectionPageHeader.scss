@@ -1,0 +1,58 @@
+@use "../variables" as *;
+
+.page_header {
+  background: linear-gradient($accent-color-3, $accent-color-4);
+  color: $text-color-main;
+  padding: $standard-gap-double;
+  display: flex;
+  align-items: center;
+  gap: $standard-gap;
+  width: 100%;
+  border-radius: $radius;
+
+  &-cover {
+    width: 120px;
+    height: 180px;
+    border-radius: $radius;
+    object-fit: cover;
+    border: 2px solid #fff
+  }
+
+  &-content {
+
+    &-header {
+      margin: 0;
+      font-size: $font-size-large;
+    }
+
+    &-descrption {
+      color: $text-color-main;
+      font-size: $font-size-small;
+      margin-top: $standard-gap;
+    }
+
+    &-progress {
+      display: flex;
+      align-items: center;
+      gap: $standard-gap;
+      margin-top: $standard-gap;
+
+      &-chip {
+        margin: $standard-gap-half;
+        display: inline-block;
+        padding: $standard-gap-half;
+        border-radius: 999px;
+        background: $accent-color-3;
+        color: $text-color-muted;
+        border: 2px solid $text-color-muted;
+        font-size: $font-size-medium;
+      }
+    }
+  }
+}
+
+
+
+
+
+

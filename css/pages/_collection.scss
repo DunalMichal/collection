@@ -1,45 +1,25 @@
-.album {
-  margin: auto;
-  min-height: 100vh;          /* pełna wysokość okna */
-  //justify-content: center;    /* poziome wyśrodkowanie */
-  //align-items: center;        /* pionowe wyśrodkowanie */
-  background: #2b2c30;        /* ciemne tło dla kontrastu */
-}
+@use "../variables" as *;
 
-.album-page {
-  background: #3e4147;
-  border: 10px solid #1e1f21;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  width: 600px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
 
-.card-slot,
-.card-slot-wrapper .card-slot {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  aspect-ratio: 2.5 / 3.5;
+.main-mid-collectionTableAdvanced{
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  position: relative;
+  width: 100%;
+  margin-top: $standard-gap;
+  margin-bottom: $standard-gap;
+}
+.main-mid-collectionTableBasic{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.main-mid-collectionAlbum{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.card-slot:hover {
-  transform: scale(1.05);
-  border-color: #fff;
-}
+.collection_page_main{
+  width: 100%;
 
-.card-slot img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
 }

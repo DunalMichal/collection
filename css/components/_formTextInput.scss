@@ -1,0 +1,111 @@
+@use "../variables" as *;
+
+.form_box {
+  display: inline-block;
+  width: calc(20% - 28px);
+  margin: $standard-gap;
+  padding: $standard-gap;
+  border: 1px solid $text-color-muted;
+  border-radius: $radius;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+
+
+  &-large {
+    width: calc(100% - 28px);
+
+  }
+  &-medium {
+      width: calc(40% - 28px);
+
+    }
+
+
+  &-label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: $standard-gap-half;
+    padding-left: $standard-gap-double;
+  }
+  &-info {
+    background-color: #007bff;
+    display: inline-block;
+    position: relative;
+    margin-left: $standard-gap-half;
+    cursor: pointer;
+    font-size: $font-size-medium;
+  }
+
+  &-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 220px;
+    background-color: $text-color-muted;
+    color: $text-color-main;
+    text-align: left;
+    border-radius: $radius;
+    padding: $standard-gap;
+    position: absolute;
+    z-index: $standard-gap;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s;
+    font-size: $font-size-small;
+  }
+
+  &-input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $standard-gap-half;
+    border-radius: $radius;
+    border: 1px solid $text-color-muted;
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    //border: 1px solid red;
+    margin: $standard-gap-half;
+    column-gap: $standard-gap;
+
+    &-option_label {
+      margin: $standard-gap;
+      padding: $standard-gap;
+      font-weight: $font-weight-bold;
+    }
+
+    &-checkbox {
+      width: $standard-gap-double;
+      height: $standard-gap-double;
+      cursor: pointer;
+    }
+    &-label{
+      text-align: center;
+    }
+
+
+
+  }
+
+
+  text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -$standard-gap-half;
+    border-width: $standard-gap-half;
+    border-style: solid;
+    border-color: $text-color-muted transparent transparent transparent;
+  }
+
+  &-info:hover &-text,
+  &-text:focus &-text {
+    visibility: visible;
+    opacity: 1;
+  }
+}

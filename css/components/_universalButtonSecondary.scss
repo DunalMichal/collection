@@ -1,0 +1,17 @@
+@use "../variables" as *;
+
+
+.buttonSecondary {
+  width: 200px;
+  background: transparent;
+  color: $text-color-main;
+  border: 1px solid $accent-color-5;
+  padding: $standard-gap;
+  border-radius: $radius;
+  margin: $standard-gap;
+  cursor: pointer;
+}
+.buttonSecondary:hover{
+  transition: all 0.3s ease;
+  background: $accent-color-3;
+}

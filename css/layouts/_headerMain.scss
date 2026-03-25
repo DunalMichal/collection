@@ -1,0 +1,102 @@
+@use "../variables" as *;
+
+.header-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  &-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .header-main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $standard-gap;
+    background: $main-bg;
+    position: relative;
+  }
+
+  .header-main-categories {
+    background: $main-bg-end;
+    width: 100%;
+    position: relative;
+
+    .nav {
+      margin: 0 auto;
+      max-width: 1440px;
+      position: relative;
+      z-index: 1;
+      background: $main-bg-end;
+      padding: 1rem 0;
+
+
+      // Górny gradient
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px; // grubość górnej krawędzi
+        background: linear-gradient(to bottom, $main-bg, transparent);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      // Dolny gradient
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px; // grubość dolnej krawędzi
+        background: linear-gradient(to bottom, $main-bg-end, $main-bg);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      // Lewy gradient
+      .nav-left-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px; // grubość lewej krawędzi
+        height: 100%;
+        background: linear-gradient(to right, $main-bg-end, transparent);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      // Prawy gradient
+      .nav-right-gradient {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px; // grubość prawej krawędzi
+        height: 100%;
+        background: linear-gradient(to left, $main-bg-end, transparent);
+        pointer-events: none;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

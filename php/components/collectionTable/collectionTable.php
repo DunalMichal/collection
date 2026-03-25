@@ -3,21 +3,26 @@ function generate_collectionTable($collectionData)
 {
     ?>
 
-        <h1 class="cards-title">Uniwersalna Baza Kart Kolekcjonerskich (Tabela 5)</h1>
+        <h1 class="cards-title">Uniwersalna Baza Kart Kolekcjonerskich</h1>
 
         <!-- Przełączniki widoku -->
-    <div class="table-wrapper">
-        <div class="changeViewButtons">
-            <button onclick="showTable5('simple')">Prosta</button>
-            <button onclick="showTable5('advanced')">Zaawansowana</button>
-            <button onclick="showTable5('trading')">Handel</button>
-        </div>
+<!--    <div class="table-wrapper">-->
+<!--        <div class="changeViewButtons">-->
+<!--            <button onclick="showTable5('simple')">Prosta</button>-->
+<!--            <button onclick="showTable5('advanced')">Zaawansowana</button>-->
+<!--            <button onclick="showTable5('trading')">Handel</button>-->
+<!--        </div>-->
 
 <!--        Pole do filtrowania -->
 <!--        <input type="text" id="searchInput5" class="search-box-5" placeholder="Szukaj karty..."-->
 <!--               style="width:100%; padding:8px;" onkeyup="filterTable5()">-->
 
 
+
+        <div class="collectionSimpleTable"</div>
+    <?php
+    generate_collectionTableBasic($collectionData);
+    ?>
         <table id="cardsTable5-simple" class="cards-table-5">
             <thead>
             <tr>
@@ -361,14 +366,14 @@ function generate_collectionTable($collectionData)
 
     <script>
 
-        function showTable5(view) {
-            const views = ["simple", "advanced", "trading"];
-
-            views.forEach(v => {
-                const table = document.getElementById(`cardsTable5-${v}`);
-                table.style.display = (v === view) ? "" : "none";
-            });
-        }
+        // function showTable5(view) {
+        //     const views = ["simple", "advanced", "trading"];
+        //
+        //     views.forEach(v => {
+        //         const table = document.getElementById(`cardsTable5-${v}`);
+        //         table.style.display = (v === view) ? "" : "none";
+        //     });
+        // }
 
         function showTable5(view) {
             const table = document.getElementById("cardsTable5-advanced");
@@ -407,13 +412,13 @@ function generate_collectionTable($collectionData)
         });
 
         // Rozwijanie podwierszy
-        function toggleSubRows5(mainRow) {
-            let nextRow = mainRow.nextElementSibling;
-            while (nextRow && nextRow.classList.contains("sub-row-5")) {
-                nextRow.style.display = (nextRow.style.display === "table-row") ? "none" : "table-row";
-                nextRow = nextRow.nextElementSibling;
-            }
-        }
+        // function toggleSubRows5(mainRow) {
+        //     let nextRow = mainRow.nextElementSibling;
+        //     while (nextRow && nextRow.classList.contains("sub-row-5")) {
+        //         nextRow.style.display = (nextRow.style.display === "table-row") ? "none" : "table-row";
+        //         nextRow = nextRow.nextElementSibling;
+        //     }
+        // }
 
         // Wyszukiwanie w tabeli
         document.getElementById("searchInput5").addEventListener("keyup", function () {

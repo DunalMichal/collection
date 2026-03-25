@@ -1,0 +1,83 @@
+@use "../variables" as *;
+
+.form_box-save {
+  display: inline-block;
+  width: calc(20% - 28px);
+  margin: $standard-gap;
+  padding: $standard-gap;
+  border: 1px solid $text-color-muted;
+  border-radius: $radius;
+  box-sizing: border-box;
+  text-align: left;
+  vertical-align: top;
+  position: relative;
+
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    top: $standard-gap-half;
+    right: $standard-gap-half;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
+    color: $secondary-color;
+  }
+
+  &-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: $standard-gap-half;
+    padding-left: $standard-gap-double;
+  }
+
+  &-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $standard-gap-half;
+    border-radius: $radius;
+    border: 1px solid $text-color-muted;
+  }
+
+  text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -$standard-gap-half;
+    border-width: $standard-gap-half;
+  }
+
+  &-info:hover &-text,
+  &-text:focus &-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  &-send {
+    display: block;
+    margin-top: $standard-gap;
+    padding: $standard-gap-half $standard-gap-double;
+    background: linear-gradient($accent-color-1, $accent-color-5);
+    color: $text-color-main;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    border: 1px solid $text-color-muted;
+    border-radius: $radius;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient($accent-color-5, $accent-color-1);
+      color: $text-color-main;
+    }
+
+    &:active {
+      background: linear-gradient($accent-color-1, $accent-color-5);
+      color: $accent-color-2;
+    }
+
+    &:focus {
+      outline: 1px solid $secondary-color;
+      outline-offset: 2px;
+    }
+  }
+
+}

@@ -1,0 +1,137 @@
+@use "../variables" as *;
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $standard-gap;
+
+  .log {
+    display: flex;
+    gap: $standard-gap;
+
+    .log-buttons {
+      display: flex;
+      gap: $standard-gap;
+      padding: $standard-gap;
+      border-radius: $radius;
+      border: none;
+
+      button, a {
+        padding: 8px 14px;
+        border-radius: $radius;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+
+      .log-buttons-login {
+        padding: $standard-gap;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-bold;
+        border: none;
+        border-radius: $radius;
+        background: linear-gradient(135deg, $accent-color-1, $accent-color-5);
+        color: $text-color-main;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+
+      .log-buttons-register {
+        padding: $standard-gap;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-bold;
+        border: none;
+        border-radius: $radius;
+        background: linear-gradient(135deg, $accent-color-2, $accent-color-6);
+        color: $main-bg;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+
+      .log-buttons-logout {
+        padding: $standard-gap;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-bold;
+        border: none;
+        border-radius: $radius;
+        background: linear-gradient(135deg, $accent-color-7, $accent-color-8);
+        color: $text-color-main;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  .notifications-user {
+    display: flex;
+    align-items: flex-start;
+    gap: $standard-gap;
+
+    &-placeholder {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: $radius;
+      object-fit: cover;
+      background-color: $text-color-muted;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      margin-top: $standard-gap-half;
+      color: $text-color-main;
+
+      &-name {
+        font-weight: $font-weight-bold;
+      }
+
+      &-stats {
+        font-size: $font-size-small;
+        color: $text-color-muted;
+      }
+    }
+
+    .notifications-button {
+      background-color: $accent-color-2;
+      color: $text-color-main;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+
+      &:hover {
+        background-color: $accent-color-2;
+        transform: scale(1.05);
+      }
+
+      #notification-count {
+        margin-left: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        color: $text-color-main;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,60 @@
+@use "../variables" as *;
+
+.search-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  display: flex;
+  flex: 1;
+  gap: 0;
+  justify-content: center;
+  margin: 20px;
+
+  &-input {
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    background: $primary-color;
+    color: $text-color-main;
+    font-size: $font-size-medium;
+
+    &::placeholder {
+      color: $text-color-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color-1;
+      box-shadow: 0 0 6px rgba($accent-color-1, 0.5);
+    }
+  }
+
+  &-button {
+    width: 60px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    background-color: $accent-color-1;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: $accent-color-1;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../../variables" as *;
+
+.user_badge {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  &-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: $radius;
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    object-fit: cover;
+  }
+
+  &-profile {
+    display: block;
+
+    &-name {
+      font-size: $font-size-large;
+      color: $text-color-main;
+
+    }
+
+    &-ratings{
+      color: $text-color-muted;
+      font-size: $font-size-small;
+
+
+    }
+    &-stats{
+      margin-top: 8px;
+      color: $text-color-muted;
+      font-size: $font-size-small;
+
+
+      &-logo{
+        background: $accent-color-2;
+        padding: 6px 8px;
+        border-radius: 999px;
+        color: #001;
+        display: inline-block;
+      }
+
+      &-text{
+
+      }
+
+    }
+  }
+
+
+}
+
