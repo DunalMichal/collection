@@ -39,6 +39,7 @@ function generate_collectionList($categoriesData){
 
 
     <script>
+        console.log(8);
         (function(){
             const select=document.getElementById('categorySelect');
             const grid=document.getElementById('collectionsGrid');

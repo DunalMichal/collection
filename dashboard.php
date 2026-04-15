@@ -5,6 +5,7 @@ require "php/components/userPage/userPageDashboardLeftSidebar.php";
 require "php/components/userPage/userPageMainHead.php";
 require "php/components/userPage/userPageDashboard.php";
 require "php/components/userPage/userPageDashboardInfo.php";
+include "php/api/getGlobalStats.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -40,6 +41,7 @@ generateHeaderMain();
     <aside class="main-aside">
         <?php
         generateSideBarFromUserPage();
+        $stats = getGlobalStats();
         ?>
     </aside>
 
@@ -48,34 +50,26 @@ generateHeaderMain();
 
         <div class="user_main">
             <div class="user_main-left">
-                <h2>📊 Podstawowe statystyki</h2>
-                <br>
-                liczba użytkowników / klientów
-                <br>
-                sprzedaż / przychody
-                <br>
-                aktywność (np. logowania, kliknięcia)
-                <br>
-                postęp (np. realizacja celów)
-                <br>
-                <h2>📈 Wykresy i raporty</h2><br>
-                wykresy trendów (np. dzienne, miesięczne)<br>
-                porównania wyników<br>
-                analizy danych w czasie<br>
-                <h2>🔔 Powiadomienia i alerty</h2><br>
-                ważne komunikaty<br>
-                błędy lub problemy<br>
-                przypomnienia<br>
-                <h2>🧭 Szybki dostęp (shortcuts)</h2><br>
-                przyciski do najważniejszych funkcji<br>
-                skróty do często używanych sekcji<br>
-                <h2>📋 Ostatnia aktywność</h2><br>
-                ostatnie działania użytkownika<br>
-                nowe wpisy / zamówienia / wiadomości<br>
-                <h2>👤 Informacje o koncie</h2><br>
-                profil użytkownika<br>
-                status konta<br>
-                plan/subskrypcja<br>
+                <h2>📊 Globalne statystyki platformy</h2>
+                <div class="dashboard-stats">
+                    <?php
+                    generateButtonFromDashboardUserInfo($stats['users'], "Users");
+                    generateButtonFromDashboardUserInfo($stats['online'], "Users Online");
+                    generateButtonFromDashboardUserInfo("", "");
+
+                    generateButtonFromDashboardUserInfo($stats['cards'], "Cards");
+                    generateButtonFromDashboardUserInfo($stats['collections'], "Collections");
+                    generateButtonFromDashboardUserInfo("", "");
+
+                    generateButtonFromDashboardUserInfo(5, "Offers");
+                    generateButtonFromDashboardUserInfo(11, "Transactions");
+                    generateButtonFromDashboardUserInfo(81, "Swaps");
+                    generateButtonFromDashboardUserInfo("", "");
+
+                    generateButtonFromDashboardUserInfo(111, "AVG Collection Value");
+                    ?>
+                </div>
+
 
             </div>
             <div class="user_main-right">

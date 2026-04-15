@@ -9,7 +9,7 @@ function getCollectionInfo($id)
     if ($conn->connect_error) {
         echo("Connection failed: " . $conn->connect_error);
     }
-    $sql = "SELECT Name, Publisher, YearOfPublish, CardsCount, Description
+    $sql = "SELECT ID, Name, Publisher, YearOfPublish, CardsCount, Description
             FROM collections
             WHERE Id = ?";
     $stmt = $conn->prepare($sql);

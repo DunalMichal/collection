@@ -42,7 +42,6 @@ function generateAddCardForm()
             <?php
             getActiveCollection($selectedCollectionID, $selectedCollection, $collectionsList);
             getActiveCollectionData($selectedCollection);
-            viewCollectionSwitcher($selectedCollectionID);
             getCardsFromDatabase($selectedCollectionID);
 //            addAdditionalCollectionInfo($selectedCollectionID);
             addCardToActiveCollection($selectedCollectionID);

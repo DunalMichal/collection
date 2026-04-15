@@ -313,7 +313,7 @@ function generateCardsTableView($selectedCollectionID)
     </div>
 
     <script>
-
+        console.log(12);
         /* --- dane przykładowe 20 kart --- */
         const ALL_CARDS = <?= json_encode($collectionData, JSON_UNESCAPED_UNICODE) ?>;
         console.log('ALL_CARDS:', ALL_CARDS);
@@ -399,6 +399,7 @@ function generateCardsTableView($selectedCollectionID)
         console.log("CCCCDDDDDDDDEEEEEEEEEEEEE");
     </script>
     <script>
+        console.log(13);
         const album = document.getElementById('album-view');
         const searchInput = document.getElementById('search');
         const fType = document.getElementById('filter-type');

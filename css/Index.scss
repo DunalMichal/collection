@@ -28,6 +28,9 @@
 @use "layouts/viewCollectionList";
 @use "layouts/getLastAddCard";
 @use "layouts/getLastAddCollection";
+@use "layouts/usersSwaps";
+@use "layouts/usersSwapsFilters";
+@use "layouts/userPageSwapProposals";
 
 
 @use "pages/collection";
@@ -82,5 +85,6 @@
 @use "components/userPage/userPageLastActionLastAddCollection";
 @use "components/userPage/userPageLastActionLastSwap";
 @use "components/userPage/userPageLastActionLastTransaction";
+@use "components/userPage/userPageCollectionList";
 
 

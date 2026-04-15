@@ -37,6 +37,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/saveToNotepad.js"></script>
 
 
+
 </head>
 
 <body>
@@ -90,6 +91,7 @@ generateHeaderMain();
 
 </main>
 <script>
+    console.log(2);
     document.addEventListener("DOMContentLoaded", () => {
         const carousel = document.getElementById("new-cards-carousel");
         const wrapper = carousel.parentElement;

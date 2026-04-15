@@ -16,12 +16,12 @@ function generateUserLeftButtonsSidebar(){
 <!--                </button>-->
             </li>
             <li>
-                <a href="/collection.php" class="sidebar-menu-button">
+                <a href="/usersCollection.php" class="sidebar-menu-button">
                     <span aria-hidden="true">📚</span> Moje kolekcje <span class="muted small">(Has / Needs)</span>
                 </a>
             </li>
             <li>
-                <a href="/swaps.php" class="sidebar-menu-button">
+                <a href="/usersSwaps.php" class="sidebar-menu-button">
                     <span aria-hidden="true">🔁</span> Wymiany / Swap
                 </a>
             </li>

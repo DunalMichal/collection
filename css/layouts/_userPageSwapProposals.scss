@@ -1,0 +1,109 @@
+@use "../variables" as *;
+
+/* SEKCJA */
+.swaps-active {
+  margin-top: $standard-gap;
+
+  h3 {
+    margin-bottom: $standard-gap;
+    font-size: $font-size-medium;
+  }
+}
+
+/* KARTA WYMIANY */
+.swap-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+
+  padding: $standard-gap;
+  margin-bottom: $standard-gap;
+
+  border: 1px solid #ccc;
+  border-radius: $radius;
+
+  transition: 0.2s;
+
+  &:hover {
+    background: rgba(0,0,0,0.03);
+  }
+
+  /* LEWA STRONA */
+  .swap-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .swap-status {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-small;
+  }
+
+  /* PRAWA STRONA */
+  .swap-actions {
+    display: flex;
+    gap: $standard-gap;
+  }
+
+  /* STATUSY (kolorowy pasek z lewej) */
+  &[data-status="proposed"] {
+    border-left: 4px solid orange;
+  }
+
+  &[data-status="negotiation"] {
+    border-left: 4px solid #f1c40f;
+  }
+
+  &[data-status="ready_to_ship"] {
+    border-left: 4px solid #3498db;
+  }
+
+  &[data-status="shipped"] {
+    border-left: 4px solid #9b59b6;
+  }
+
+  &[data-status="completed"] {
+    border-left: 4px solid #2ecc71;
+  }
+
+  &[data-status="dispute"] {
+    border-left: 4px solid #e74c3c;
+  }
+}
+
+/* PRZYCISKI */
+.swap-actions button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  font-size: $font-size-small;
+}
+
+/* KONKRETNE PRZYCISKI */
+.btn-accept {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn-reject {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-counter {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-add-tracking {
+  background: #3498db;
+  color: white;
+}
+
+.btn-mark-received {
+  background: #9b59b6;
+  color: white;
+}

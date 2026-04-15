@@ -1589,6 +1589,309 @@ th {
   transform: scale(1.05);
 }
 
+.user_swaps_wrapper {
+  padding: 12px;
+}
+
+.user_swaps-wrapper h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.user_swaps-wrapper h3 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+/* Karty wymian */
+.swap-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ccc;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.swap-card:hover {
+  background: #f9f9f9;
+}
+
+/* Kolory statusów */
+.swap-card[data-status=proposed] {
+  border-left-color: orange;
+}
+
+.swap-card[data-status=negotiation] {
+  border-left-color: #ffcc00;
+}
+
+.swap-card[data-status=ready_to_ship] {
+  border-left-color: blue;
+}
+
+.swap-card[data-status=shipped] {
+  border-left-color: purple;
+}
+
+.swap-card[data-status=completed] {
+  border-left-color: green;
+}
+
+.swap-card[data-status=dispute] {
+  border-left-color: red;
+}
+
+.swap-status {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Akcje */
+.swap-actions button {
+  margin-left: 6px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-accept {
+  background: green;
+  color: #fff;
+}
+
+.btn-reject {
+  background: red;
+  color: #fff;
+}
+
+.btn-counter {
+  background: orange;
+  color: #fff;
+}
+
+.btn-add-tracking {
+  background: blue;
+  color: #fff;
+}
+
+.btn-mark-received {
+  background: purple;
+  color: #fff;
+}
+
+.user_swaps-wrapper {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+.swaps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swaps-header h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.swap-search-icon-wrapper {
+  position: relative;
+}
+
+.swap-search-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* MENU FILTRÓW */
+.swap-filter-menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none; /* ukryte domyślnie */
+  z-index: 100;
+}
+
+.swap-filter-menu h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.filter-group {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 5px;
+}
+
+.btn-apply-filters {
+  width: 100%;
+  padding: 6px 0;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user_swaps-wrapper {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+.swaps-header h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.swap_filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+.swap_filters-group {
+  display: flex;
+  flex-direction: column;
+}
+.swap_filters-group-label {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+#apply-filters {
+  margin-left: auto;
+  padding: 12px;
+  background: #007bff;
+  color: #f6f8e6;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* SEKCJA */
+.swaps-active {
+  margin-top: 12px;
+}
+.swaps-active h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* KARTA WYMIANY */
+.swap-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: 0.2s;
+  /* LEWA STRONA */
+  /* PRAWA STRONA */
+  /* STATUSY (kolorowy pasek z lewej) */
+}
+.swap-card:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+.swap-card .swap-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.swap-card .swap-status {
+  font-weight: 600;
+  font-size: 12px;
+}
+.swap-card .swap-actions {
+  display: flex;
+  gap: 12px;
+}
+.swap-card[data-status=proposed] {
+  border-left: 4px solid orange;
+}
+.swap-card[data-status=negotiation] {
+  border-left: 4px solid #f1c40f;
+}
+.swap-card[data-status=ready_to_ship] {
+  border-left: 4px solid #3498db;
+}
+.swap-card[data-status=shipped] {
+  border-left: 4px solid #9b59b6;
+}
+.swap-card[data-status=completed] {
+  border-left: 4px solid #2ecc71;
+}
+.swap-card[data-status=dispute] {
+  border-left: 4px solid #e74c3c;
+}
+
+/* PRZYCISKI */
+.swap-actions button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* KONKRETNE PRZYCISKI */
+.btn-accept {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn-reject {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-counter {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-add-tracking {
+  background: #3498db;
+  color: white;
+}
+
+.btn-mark-received {
+  background: #9b59b6;
+  color: white;
+}
+
 .main-mid-collectionTableAdvanced {
   display: flex;
   justify-content: center;
@@ -1624,12 +1927,12 @@ th {
 }
 .user_main-left {
   flex: 2;
-  min-width: 0;
+  min-width: 300px;
   border: 1px solid red;
 }
 .user_main-right {
   flex: 1;
-  min-width: 0;
+  min-width: 250px;
   border: 1px solid blue;
 }
 
@@ -1771,7 +2074,7 @@ th {
 .progress {
   width: 100%;
   max-width: 100%;
-  background-color: #ddd;
+  background-color: #7a0c0c;
   border-radius: 20px;
   overflow: hidden;
   margin: 10px 0;
@@ -1780,7 +2083,7 @@ th {
   width: 70%;
   height: 20px;
   background-color: #4caf50;
-  color: white;
+  color: #040404;
   text-align: center;
   line-height: 20px;
 }
@@ -3147,6 +3450,99 @@ a.buttonSecondaryLink:hover {
 
 .status-rejected {
   color: red;
+}
+
+.collections_view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+.collections_view-header-title {
+  font-size: 24px;
+}
+.collections_view-header-switcher {
+  display: flex;
+  gap: 24px;
+}
+.collections_view-list {
+  display: grid;
+  gap: 12px;
+}
+.collections_view-list[data-view=list] {
+  grid-template-columns: 1fr;
+}
+.collections_view-list[data-view=list] .collection-card {
+  display: flex;
+  gap: 12px;
+}
+.collections_view-list[data-view=list] .collection-card-info-details li {
+  display: list-item;
+}
+.collections_view-list[data-view=list] .collection-card-image {
+  width: 150px;
+  height: 200px;
+}
+.collections_view-list[data-view=grid] {
+  grid-template-columns: repeat(4, 1fr);
+}
+.collections_view-list[data-view=grid] .collection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.collections_view-list[data-view=grid] .collection-card-info-details li:last-child {
+  display: none;
+}
+.collections_view-list[data-view=grid] .collection-card-image {
+  width: 150px;
+  height: 200px;
+}
+.collections_view-list[data-view=compact] {
+  grid-template-columns: repeat(10, 1fr);
+}
+.collections_view-list[data-view=compact] .collection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.collections_view-list[data-view=compact] .collection-card-info {
+  display: none;
+}
+.collections_view-list[data-view=compact] .collection-card-image {
+  width: 100px;
+  height: 150px;
+}
+.collections_view .collection-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+.collections_view .collection-card-image {
+  width: 75px;
+  height: 100px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22cd12, #bf316f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collections_view .collection-card-info {
+  display: flex;
+  flex-direction: column;
+}
+.collections_view .collection-card-info h3 {
+  margin-bottom: 12px;
+}
+.collections_view .collection-card-info ul {
+  list-style: none;
+  padding: 0;
+}
+.collections_view .collection-card-info ul li {
+  margin-bottom: 12px;
 }
 
 /*# sourceMappingURL=Index.css.map */

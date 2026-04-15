@@ -1,0 +1,115 @@
+@use "../../variables" as *;
+
+.collections_view {
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $standard-gap;
+
+    &-title {
+      font-size: $font-size-large;
+    }
+
+    &-switcher {
+      display: flex;
+      gap: $standard-gap-double;
+    }
+  }
+
+  &-list {
+    display: grid;
+    gap: $standard-gap;
+
+    &[data-view="list"] {
+      grid-template-columns: 1fr;
+
+      .collection-card {
+        display: flex;
+        gap: $standard-gap;
+      }
+      .collection-card-info-details li {
+        display: list-item;
+      }
+      .collection-card-image {
+        width: 150px;
+        height: 200px;
+      }
+    }
+
+    &[data-view="grid"] {
+      grid-template-columns: repeat(4, 1fr);
+
+      .collection-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $standard-gap;
+      }
+
+      .collection-card-info-details li:last-child {
+        display: none;
+      }
+      .collection-card-image {
+        width: 150px;
+        height: 200px;
+      }
+    }
+
+    &[data-view="compact"] {
+      grid-template-columns: repeat(10, 1fr);
+
+      .collection-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $standard-gap;
+      }
+
+      .collection-card-info {
+        display: none;
+      }
+
+      .collection-card-image {
+        width: 100px;
+        height: 150px;
+      }
+    }
+  }
+
+  .collection-card {
+    display: flex;
+    gap: $standard-gap;
+    padding: $standard-gap;
+    border: 1px solid #ccc;
+
+    &-image {
+      width: 75px;
+      height: 100px;
+      border-radius: $radius;
+      background: linear-gradient(135deg, #22cd12, #bf316f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        margin-bottom: $standard-gap;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: $standard-gap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "../variables" as *;
+
+.swap_filters {
+  display: flex;
+  gap: $standard-gap;
+  flex-wrap: wrap;
+  margin-bottom: $standard-gap;
+  padding: $standard-gap;
+  border-radius: $radius;
+  border: 1px solid #ccc;
+
+  &-group{
+    display: flex;
+    flex-direction: column;
+
+    &-label {
+      font-weight: $font-weight-bold;
+      margin-bottom: $standard-gap;
+    }
+  }
+}
+
+#apply-filters {
+  margin-left: auto;
+  padding: $standard-gap;
+  background: $accent-color-1;
+  color: $text-color-main;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+}

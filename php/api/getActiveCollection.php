@@ -1,6 +1,6 @@
 <?php
 
-function getActiveCollection($selectedCollectionID, $selectedCollection, $collectionsList)
+function getActiveCollection($selectedCollectionID, $collectionList, $collectionsList)
 {
     ?>
 

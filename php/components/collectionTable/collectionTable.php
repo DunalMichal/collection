@@ -365,7 +365,7 @@ function generate_collectionTable($collectionData)
 
 
     <script>
-
+        console.log(10);
         // function showTable5(view) {
         //     const views = ["simple", "advanced", "trading"];
         //

@@ -16,7 +16,7 @@ function formCheckBoxes($name, $label, $options = [], $required = false, $valueA
             <?php
             foreach ($selectLimits as $limit) {
                 ?>
-                <span class="form_box-row-label"><?=$limit["Name"]?></span>
+                <span class="form_box-row-label"><?= $limit["Name"] ?></span>
                 <?php
             }
             ?>
@@ -27,41 +27,24 @@ function formCheckBoxes($name, $label, $options = [], $required = false, $valueA
                 <label class="form_box-row-option_label" for="<?= $valueAsText ?>">
                     <?= $option["Name"] ?>
                 </label>
-<!--                <input type="checkbox" class="form_box-row-checkbox form_box-row-limitType"-->
-<!--                       id="--><?php //= $option["Name"] ?><!---limitType" name="--><?php //= $name ?><!---limitType[]" value="1"/>-->
+                <!--                <input type="checkbox" class="form_box-row-checkbox form_box-row-limitType"-->
+                <!--                       id="--><?php //= $option["Name"] ?><!---limitType" name="-->
+                <?php //= $name ?><!---limitType[]" value="1"/>-->
                 <?php
                 foreach ($selectLimits as $limit) {
                     ?>
                     <input type="checkbox" class="form_box-row-checkbox" id="<?= $option["Name"] ?>-limitType"
-                           name="<?= $name ?>[<?=$option["ID"]?>][<?=$limit["ID"]?>]" value="1"/>
+                           name="<?= $name ?>[<?= $option["ID"] ?>][<?= $limit["ID"] ?>]" value="1"/>
                     <?php
                 }
                 ?>
             </div>
         <?php endforeach; ?>
-
-        <script>
-            const containerDiv = document.currentScript.parentNode;
-            const inputLimitType = containerDiv.getElementsByClassName('form_box-row-limitType');
-            const selectLimitNumber = containerDiv.getElementsByClassName('form_box-row-select-box');
-
-            for (let i = 0; i < inputLimitType.length; i++) {
-                inputLimitType[i].addEventListener('change', () => {
-                    if (inputLimitType[i].checked) {
-                        selectLimitNumber[i].disabled = false;
-                    } else {
-                        selectLimitNumber[i].disabled = true;
-                    }
-                });
-            }
-        </script>
-
     </div>
 
     <?php
 }
 
-?>
 
 
 

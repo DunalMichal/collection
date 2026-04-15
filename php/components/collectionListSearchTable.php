@@ -38,6 +38,7 @@ function generate_searchTable()
 
 
     <script>
+        console.log(9);
         const filtersContainer = document.getElementById("filters");
         const categories = document.querySelectorAll(".category");
         const resultsContainer = document.getElementById("results");

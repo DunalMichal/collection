@@ -37,6 +37,7 @@ function addEditCollection($fields, $nextID, $existingCollections) {
     </div>
 
     <script>
+        console.log(5);
         const collectionType = document.getElementById('collectionType');
         const newFields = document.getElementById('newCollectionFields');
         const existingFields = document.getElementById('existingCollectionFields');

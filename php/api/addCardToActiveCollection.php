@@ -61,9 +61,12 @@ function addCardToActiveCollection($selectedCollectionID)
         ?>
         <br>
         <?php
+
         formCheckBoxes("card_variants_parallel", "Wariant Karty - Parallel", $cardsVariantsInCollection, false, false, true, $cardsLimits);
         formCheckBoxes("card_variants_autograph", "Autograf", $cardsVariantsInCollection, false, false, false, $cardsLimits);
         formCheckBoxes("card_variants_relic", "Relic", $cardsVariantsInCollection, false, false, false, $cardsLimits);
+
+
 
 //        formSelectInput("save_card", "Zapisz Karte", true, false);
 //        formSelectInput("save_card", "Zapisz Karte", true, false);
@@ -82,5 +85,33 @@ function addCardToActiveCollection($selectedCollectionID)
 //        addAdditionalTCGCardInfo($selectedCollectionID);
         ?>
     </form>
+    <script>
+        console.log(3);
+        const chosenParallels = document.querySelectorAll('[name^="card_variants_parallel["]');
+        const chosenAutographs = document.querySelectorAll('[name^="card_variants_autograph["]');
+        const chosenRelics = document.querySelectorAll('[name^="card_variants_relic["]');
+
+        chosenAutographs.forEach((chosenAutograph)=> {chosenAutograph.disabled = true;});
+        chosenRelics.forEach((chosenRelic)=> {chosenRelic.disabled = true;});
+
+
+        chosenParallels.forEach((parallel, index) => {
+
+            parallel.addEventListener('change', () => {
+
+                if (parallel.checked) {
+                    chosenAutographs[index].disabled = false;
+                    chosenRelics[index].disabled = false;
+                } else {
+                    chosenAutographs[index].disabled = true;
+                    chosenRelics[index].disabled = true;
+
+                    chosenAutographs[index].checked = false;
+                    chosenRelics[index].checked = false;
+                }
+            });
+        });
+
+    </script>
     <?php
 }
