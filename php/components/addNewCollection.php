@@ -60,7 +60,7 @@ function addNewCollection()
             <button type="submit">Zapisz kolekcję</button>
     </div>
     <script>
-        console.log(6);
+
         document.addEventListener('DOMContentLoaded', function () {
             const containers = document.querySelectorAll('.checkbox-tree-container');
 
@@ -91,7 +91,7 @@ function addNewCollection()
 
     </script>
     <script>
-        console.log(7);
+
         document.getElementById('collection_name').addEventListener('change', function () {
             let name = this.value.trim();
             if(name === "") return;

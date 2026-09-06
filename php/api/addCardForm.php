@@ -27,27 +27,8 @@ try {
     $stmt->bind_param("iisi", $_POST['selected_collection_ID'], $lastCardIDinDataBase, $_POST['unique_card_number_in_collection'], $_POST['card_number_in_collection']);
     $stmt->execute();
 
-    $sql = "INSERT INTO cards_cards_variants (cardID, variantID) VALUES (?,?)";
-    $stmt = $conn->prepare($sql);
-
-
-    foreach ($_POST['card_variants_parallel'] as $variantID => $cardsLimits) {
-        $stmt->bind_param("ii", $lastCardIDinDataBase, $variantID);
-        $stmt->execute();
-    }
-
-    $sql = "INSERT INTO cards_cards_limit (cardID, variantID, limitID) VALUES (?,?,?)";
-    $stmt = $conn->prepare($sql);
-
-    foreach ($_POST['card_variants_parallel'] as $variantID => $cardsLimits) {
-        foreach ($cardsLimits as $limitID => $cardLimit) {
-            $stmt->bind_param("iii", $lastCardIDinDataBase, $variantID, $limitID);
-            $stmt->execute();
-        }
-    }
-
     if (!empty($_POST['card_variants_autograph'])) {
-        $sql = "INSERT INTO cards_relics_details (cardID, CardVariantID, CardLimitID, RelicID) VALUES (?,?,?,1)";
+        $sql = "INSERT INTO cards_details (cardID, CardVariantID, CardLimitID, RelicID) VALUES (?,?,?,1)";
         $stmt = $conn->prepare($sql);
 
         foreach ($_POST['card_variants_autograph'] as $variantID => $cardsLimits) {
@@ -58,7 +39,7 @@ try {
         }
     }
     if (!empty($_POST['card_variants_relic'])) {
-        $sql = "INSERT INTO cards_relics_details (cardID, CardVariantID, CardLimitID, RelicID) VALUES (?,?,?,2)";
+        $sql = "INSERT INTO cards_details (cardID, CardVariantID, CardLimitID, RelicID) VALUES (?,?,?,2)";
         $stmt = $conn->prepare($sql);
 
         foreach ($_POST['card_variants_relic'] as $variantID => $cardsLimits) {
@@ -68,18 +49,23 @@ try {
             }
         }
     }
+    if(!empty($_POST['card_variants_parallel'])){
+        $sql = "INSERT INTO cards_details (cardID, CardVariantID, CardLimitID, RelicID) VALUES (?,?,?,10)";
+        $stmt = $conn->prepare($sql);
 
-
-
-    echo "<pre>";
-    print_r($_POST["card_variants_parallel"]);
-    echo "</pre>";
+        foreach ($_POST['card_variants_parallel'] as $variantID => $cardsLimits) {
+            foreach ($cardsLimits as $limitID => $cardLimit) {
+                $stmt->bind_param("iii", $lastCardIDinDataBase, $variantID, $limitID);
+                $stmt->execute();
+            }
+        }
+    }
 
     foreach ($_POST as $key => $value) {
         if (str_starts_with($key, "card_attribute_")) {
             $newKey = substr($key, strlen("card_attribute_"));
 
-            $sql = "INSERT INTO cards_attributes (cardID, attributeID, Value) VALUES (?,?,?)";
+            $sql = "INSERT INTO cards_attributes (cardID, attributeID, ValueID) VALUES (?,?,?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("iii", $lastCardIDinDataBase, $newKey, $value);
             $stmt->execute();

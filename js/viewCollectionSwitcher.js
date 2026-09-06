@@ -1,4 +1,4 @@
-console.log("view 1 2 3", document.querySelectorAll('.view_switcher'));
+
 document.querySelectorAll('.view_switcher').forEach(switcher => {
     const buttons = switcher.querySelectorAll('.view_switcher-button');
     const views = document.querySelectorAll('.cards-view');

@@ -1,4 +1,5 @@
 <?php
+include "php/api/getCollectionData.php";
 
 function generateActiveUserCollectionList($userID)
 {
@@ -67,7 +68,7 @@ function generateActiveUserCollectionList($userID)
 
     <!-- JS -->
     <script>
-        console.log(11);
+
         const buttons = document.querySelectorAll('.collections_view-header-switcher button');
         const container = document.querySelector('.collections_view-list');
 

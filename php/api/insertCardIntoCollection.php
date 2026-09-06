@@ -21,7 +21,7 @@ function insertCardIntoCollection($collectionID, $cardData)
 
         // 2️⃣ Dodaj rekord do tabeli `cards_collections`
         $stmt = $conn->prepare("INSERT INTO cards_collections 
-            (CollectionID, CardID, CardCollectionID, cardUniqueID) 
+            (CollectionID, CardID, CardID, cardUniqueID) 
             VALUES (?, ?, ?, ?)");
         $stmt->bind_param(
             "iiii",
@@ -43,8 +43,8 @@ function insertCardIntoCollection($collectionID, $cardData)
 
         // 4️⃣ Dodaj warianty i limity
         foreach ($cardData['variants'] as $variantID => $limit) {
-            $stmt = $conn->prepare("INSERT INTO cards_cards_variants
-                (CardID, VariantID) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO cards_details
+                (CardID, cards_details.CardVariantID) VALUES (?, ?)");
             $stmt->bind_param("iii", $cardID, $variantID, $limit);
             $stmt->execute();
             $stmt->close();

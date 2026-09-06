@@ -6,6 +6,7 @@ require "php/components/userPage/userPageMainHead.php";
 require "php/components/userPage/userPageDashboard.php";
 require "php/components/userPage/userPageDashboardInfo.php";
 
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
     print_r($_SESSION);

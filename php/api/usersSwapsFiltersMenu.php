@@ -49,7 +49,7 @@ function generateSwapsFiltersMenu()
         <button id="apply-filters">Zastosuj filtry</button>
     </div>
     <script>
-        console.log(4);
+
         document.getElementById('apply-filters').addEventListener('click', () => {
             const activity = document.getElementById('filter-activity').value;
             const country = document.getElementById('filter-country').value;

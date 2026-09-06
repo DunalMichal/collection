@@ -5,7 +5,6 @@ include "php/api/getActiveCollection.php";
 include "php/api/getActiveCollectionData.php";
 include "php/api/addCardToActiveCollection.php";
 include "php/api/getCardsFromDatabase.php";
-include "php/api/getCardsFromCollectionSimple.php";
 include "php/api/getCardsFromSelectedCollection.php";
 include "php/api/getCardTypesInCollection.php";
 include "php/api/getCardVariantsInCollection.php";
@@ -21,6 +20,8 @@ include "php/layouts/mainSectionContainer.php";
 include "php/api/getAttributesFromActiveCollection.php";
 include "php/api/getCardsCountInCollection.php";
 include "php/api/getlastCardNumber.php";
+
+include "php/api/getCollectionsInfo.php";
 
 include "php/api/insertCardIntoCollection.php";
 

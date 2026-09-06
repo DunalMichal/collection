@@ -1,0 +1,73 @@
+@use "../variables" as *;
+
+
+.cards-album {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &-page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 504px;
+    height: 672px;
+    background: #1b1b1b;
+    border-radius: $radius;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    padding: $standard-gap;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-rows: repeat(var(--rows), 1fr);
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-auto-rows: 1fr;
+    aspect-ratio: 3 / 4;
+    gap: $standard-gap;
+    width: 100%;
+    height: 100%;
+    align-content: start;
+  }
+
+  &-grid-card {
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: $standard-gap;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(255,255,255,.05), transparent 60%);
+    }
+  }
+  .album-page--left {
+    transform: perspective(1200px) rotateY(2deg);
+  }
+  .album-page--right {
+    transform: perspective(1200px) rotateY(-2deg);
+  }
+}
+
+
+.card--base {
+  background: #d9d9d9;
+  border-radius: $standard-gap;
+}
+
+.card--green {
+  background: #2ecc71;
+  border-radius: $standard-gap;
+}
+
+.card--blue {
+  background: #3498db;
+  border-radius: $standard-gap;
+}
+.card--purple {
+  background: #ae75ca;
+  border-radius: $standard-gap;
+}

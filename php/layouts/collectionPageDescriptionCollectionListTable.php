@@ -29,7 +29,6 @@ function generateCollectionPageCollectionListTable($basicTableCardsList)
 
 
     <script>
-        console.log(14);
         const cardsData = <?php echo json_encode($basicTableCardsList, JSON_UNESCAPED_UNICODE); ?>;
         const tableHead = document.getElementById('tableHead');
         const tableBody = document.getElementById('tableBody');

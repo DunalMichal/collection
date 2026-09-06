@@ -3,44 +3,97 @@
 .cards-list {
   display: flex;
   flex-direction: column;
-  list-style: none;
+  width: 100%;
   padding: 0;
   margin: 0;
-  width: 100%;
-  justify-content: space-between;
+  list-style: none;
+  overflow-x: auto;
+  gap: 0;
 
-
-  &-header {
-    font-weight: bold;
+  &-header,
+  &-filters,
+  &-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
-    padding: $standard-gap $standard-gap;
-    gap: $standard-gap-double;
+    grid-template-columns: 1fr 1fr 3fr 2fr 2fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    padding: $standard-gap;
+    gap: $standard-gap;
+    align-items: center;
+    font-size: $font-size-small;
+    color: $text-color-main;
 
-
-    &-item{
-      white-space: nowrap;
+    &-cell {
+      width: 100%;
     }
   }
 
-  &-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  &-header {
+    background: linear-gradient(to top, lighten($primary-color, 20%), $primary-color-end);
+    font-weight: $font-weight-bold;
+    color: $text-color-main;
+    user-select: none;
     align-items: center;
-    padding: $standard-gap;
-    background: $primary-color;
-    border-radius: $radius;
-    border: 1px solid $accent-color-1;
-    justify-content: space-between;
-    min-height: 50px;
 
-    span {
+    &-column {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: center;
     }
   }
+
+  &-filters {
+    background: linear-gradient(to bottom, lighten($primary-color, 20%), $primary-color-end);
+    user-select: none;
+    align-items: center;
+
+    &-cell {
+      width: 100%;
+    }
+
+    &-input,
+    &-select {
+      height: 30px;
+      width: 100%;
+      background: $text-color-main;
+      color: $text-color;
+      font-size: $font-size-small;
+      transition: background .15s ease;
+      border-radius: 0;
+
+      &::placeholder {
+        color: $primary-color;
+      }
+      &:hover {
+        background: $primary-color;
+        color: $text-color-main;
+      }
+      &:focus {
+        background: $text-color-main;
+        color: $primary-color;
+      }
+    }
+    &-input {
+      height: 30px;
+    }
+  }
+
+  &-row:nth-child(even) {
+    background: lighten($primary-color, 2%);
+  }
+  &-row:nth-child(odd) {
+    background: $primary-color;
+  }
+  &-row:hover {
+    background: lighten($primary-color, 6%);
+  }
+
+  &-content{
+    background-color: #22cd12;
+    padding: 0;
+  }
 }
+
+
 
 
 

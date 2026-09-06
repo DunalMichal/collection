@@ -1,18 +1,12 @@
 <?php
-function viewCollectionSwitcher($default = 'list')
-{ ?>
 
-    <div class="view_switcher" data-default="<?= $default ?>">
-        <button class="view_switcher-button" data-view="list" title="Widok listy">📄</button>
-        <button class="view_switcher-button" data-view="table" title="Widok tabeli">📊</button>
-        <button class="view_switcher-button" data-view="album" title="Widok albumu">🖼️</button>
-    </div>
-
-
-    <?php
-    generateCardsListView($default);
-    generateCardsTableView($default);
-    generateCardsAlbumView($default);
+function viewCollectionSwitcher($currentView = 'list'): void
+{
     ?>
-<?php
+    <div class="view_switcher" data-current="<?= htmlspecialchars($currentView) ?>">
+        <button class="view_switcher-button" data-view="album">🖼️ Album</button>
+        <button class="view_switcher-button" data-view="list">📄 Lista</button>
+        <button class="view_switcher-button" data-view="table">📊 Tabela</button>
+    </div>
+    <?php
 }

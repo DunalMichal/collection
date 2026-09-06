@@ -9,13 +9,10 @@ function getCardsFromDatabase($selectedCollectionID): array
         die("Błąd połączenia: " . $conn->connect_error);
     }
 
-    $sql = "SELECT cards.ID, cards.Name, types_of_cards.Name AS TypeName, cards_variants.Name AS VariantName, cards_collections.cardUniqueID, cards_collections.CardNumberInCollectionID, cards_collections.CardID
-FROM cards, types_of_cards, cards_variants, cards_collections, cards_cards_variants
-WHERE cards.TypeID = types_of_cards.ID AND cards.ID = cards_collections.cardID AND cards_collections.CardID = cards_cards_variants.cardID AND cards_cards_variants.variantID = cards_variants.ID AND cards_collections.CollectionID = ?
+    $sql = "SELECT cards_details.ID as cardDetailID, cards.ID, cards_collections.CardID, cards.Name, types_of_cards.Name AS TypeName, cards_variants.Name AS VariantName, cards_variants.ID AS VariantID, cards_collections.cardUniqueID, cards_collections.CardNumberInCollectionID
+FROM cards, types_of_cards, cards_variants, cards_collections, cards_details
+WHERE cards.TypeID = types_of_cards.ID AND cards.ID = cards_collections.cardID AND cards_collections.CardID = cards_details.CardId AND cards_details.CardVariantID = cards_variants.ID AND cards_collections.CollectionID = ?
 ORDER BY cards_collections.CardNumberInCollectionID";
-
-
-
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $selectedCollectionID);

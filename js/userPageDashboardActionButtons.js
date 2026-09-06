@@ -21,5 +21,5 @@
 });
 
     // Domyślnie pierwsza zakładka
-    buttons[0].click();
+    // buttons[0].click();
 });

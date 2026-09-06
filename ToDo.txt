@@ -1,0 +1,36 @@
+Tabelka Wyświetlania kaart w kolekcji
+
+        - numer kolejny karty w kolekcji
+        - numer unikatowy karty pobierany z bazy danych
+        - nazwa karty pobierana z bazy danych
+        - nazwa druzyny pobierana z bazy danych
+                - wprowadzić rozróżnianie czy kolekcja zawiera DRUZYNY czy KRAJE lub INNE
+        - rodzaj karty pobierany z bazy danych
+        - variant karty pobierany z bazy danych
+        - ilość kart jakie posiada dany uzytkownik
+        - ikona dodaj kartę
+        - ikona odejmij kartę
+        - ikona szukaj karty
+
+
+
+
+26.08.2026
+Przy Kilku Atrybutach php nie wie który atrybut stoi na jakim miejscu, w przypadku braku atrybutu nr 1, atrybut nr 2 wyswietla się na miejscu atrybutu nr 1 -
+Widok listy kart przy przeglądaniu w przypadku wiecej atrybutu niz 1 ... przesuwa  się w lewo bo widzi BRAK - puste pole
+
+Porządki :)
+
+Spis / lista / Dokumentacja API
+
+
+1. Frontend - spójny
+2. Komponenty
+3. Komponenty pod backend
+4. Dokumentacja API
+
+
+Zapytanie do generowanie pliku:
+Odpowiedź ma zawierać ID karty oraz tablicę "details" ze szczegółami każdego wariantu karty.
+Dany wariant opisany jest poprzez wiersz odpowiedzi z bazy danych.
+Opis szczegółów karty ma zawierać wszystkie informacje zwrócone z bazy danych

@@ -11,8 +11,8 @@ function getCollectionData($collectionID)
     }
 
     $sql = "SELECT cards.ID, cards.Name, types_of_cards.Name AS TypeName, cards_variants.Name AS VariantName, cards_collections.cardUniqueID
-FROM cards, types_of_cards, cards_variants, cards_cards_variants, cards_collections
-WHERE cards.TypeID = types_of_cards.ID AND cards.ID = cards_cards_variants.cardID AND cards_cards_variants.variantID = cards_variants.ID AND cards.ID = cards_collections.cardID AND cards_variants.ID = cards_collections.variantID AND cards_collections.CollectionID = ?";
+FROM cards, types_of_cards, cards_variants, cards_details, cards_collections
+WHERE cards.TypeID = types_of_cards.ID AND cards.ID = cards_details.cardID AND cards_details.CardVariantID = cards_variants.ID AND cards.ID = cards_collections.cardID AND cards_variants.ID = cards_collections.CardID AND cards_collections.CollectionID = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $collectionID);
@@ -23,3 +23,4 @@ WHERE cards.TypeID = types_of_cards.ID AND cards.ID = cards_cards_variants.cardI
 
     return $result->fetch_all(MYSQLI_ASSOC);
 }
+

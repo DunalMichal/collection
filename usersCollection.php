@@ -1,6 +1,8 @@
 <?php
 include "php/layouts/header.php";
 include "php/layouts/navigation.php";
+
+
 require "php/components/userPage/userPageDashboardLeftSidebar.php";
 require "php/components/userPage/userPageMainHead.php";
 require "php/components/userPage/userPageDashboard.php";

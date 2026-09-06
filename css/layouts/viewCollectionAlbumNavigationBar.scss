@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+.cards-album-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $standard-gap;
+  width: 100%;
+  padding: $standard-gap $standard-gap;
+  background: $primary-color;
+  border-radius: $radius;
+  margin-bottom: $standard-gap;
+  box-sizing: border-box;
+}
+
+.cards-album-navigation-pages {
+  flex: 1;
+  text-align: center;
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+  color: $text-color-main;
+}
+.cards-album-navigation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  border-radius: $radius;
+  color: $text-color-main;
+  background: lighten($primary-color, 10%);
+  transition: .15s ease;
+  font-size: $font-size-large;
+
+  &:hover {
+    background: lighten($primary-color, 20%);
+    transform: scale(1.05);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    transform: none;
+
+    &:hover {
+      background: lighten($primary-color, 1%);
+      transform: none;
+    }
+  }
+}

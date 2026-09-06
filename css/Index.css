@@ -898,7 +898,60 @@ body {
   }
 }
 .description_container {
-  padding: 12px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  padding: 40px;
+  border-radius: 24px;
+  background: #161b22;
+}
+.description_container-content-release {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #1f6feb;
+  border-radius: 999px;
+  margin-bottom: 15px;
+}
+.description_container-content-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+.description_container-content-buttons-tabButton {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.description_container-content-buttons-tabButton.active {
+  background: #1f6feb;
+}
+.description_container-image {
+  background: #21262d;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  place-items: center;
+}
+.description_container-image-placeholder {
+  height: 75%;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  background-color: #d9d9d9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.description_container-image-placeholder:hover {
+  transform: scale(1.05);
+}
+.description_container-content h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+.description_container-content p {
+  opacity: 0.7;
+  max-width: 600px;
 }
 .description_container-album_info {
   display: flex;
@@ -930,6 +983,19 @@ body {
 .description_container-album_info-cover .placeholder2-description p {
   font-size: 16px;
   margin-bottom: 12px;
+}
+
+.collection_content {
+  margin-top: 25px;
+  background: #161b22;
+  border-radius: 20px;
+  padding: 25px;
+}
+.collection_content-tabContent {
+  display: none;
+}
+.collection_content-tabContent.active {
+  display: block;
 }
 
 .description_container-album_img .album-gallery {
@@ -1258,6 +1324,31 @@ body {
   max-width: 100%;
 }
 
+.stats_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.stats_container-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+.stats_container-stats {
+  display: grid;
+  background: #161b22;
+  padding: 25px;
+  border-radius: 18px;
+}
+.stats_container-stats span {
+  display: block;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+.stats_container-stats strong {
+  font-size: 28px;
+}
+
 .form_section {
   width: 100%;
   display: flex;
@@ -1501,37 +1592,148 @@ th {
 .cards-list {
   display: flex;
   flex-direction: column;
-  list-style: none;
+  width: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
+  overflow-x: auto;
+  gap: 0;
+}
+.cards-list-header, .cards-list-filters, .cards-list-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 2fr 2fr 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 12px;
+  gap: 12px;
+  align-items: center;
+  font-size: 12px;
+  color: #f6f8e6;
+}
+.cards-list-header-cell, .cards-list-filters-cell, .cards-list-row-cell {
   width: 100%;
-  justify-content: space-between;
 }
 .cards-list-header {
-  font-weight: bold;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
-  padding: 12px 12px;
-  gap: 24px;
-}
-.cards-list-header-item {
-  white-space: nowrap;
-}
-.cards-list-item {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  background: linear-gradient(to top, rgb(97.724137931, 109, 120.275862069), #1f2428);
+  font-weight: 600;
+  color: #f6f8e6;
+  user-select: none;
   align-items: center;
-  padding: 12px;
-  background: #343a40;
-  border-radius: 12px;
-  border: 1px solid #007bff;
-  justify-content: space-between;
-  min-height: 50px;
 }
-.cards-list-item span {
+.cards-list-header-column {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
+}
+.cards-list-filters {
+  background: linear-gradient(to bottom, rgb(97.724137931, 109, 120.275862069), #1f2428);
+  user-select: none;
+  align-items: center;
+}
+.cards-list-filters-cell {
+  width: 100%;
+}
+.cards-list-filters-input, .cards-list-filters-select {
+  height: 30px;
+  width: 100%;
+  background: #f6f8e6;
+  color: #212529;
+  font-size: 12px;
+  transition: background 0.15s ease;
+  border-radius: 0;
+}
+.cards-list-filters-input::placeholder, .cards-list-filters-select::placeholder {
+  color: #343a40;
+}
+.cards-list-filters-input:hover, .cards-list-filters-select:hover {
+  background: #343a40;
+  color: #f6f8e6;
+}
+.cards-list-filters-input:focus, .cards-list-filters-select:focus {
+  background: #f6f8e6;
+  color: #343a40;
+}
+.cards-list-filters-input {
+  height: 30px;
+}
+.cards-list-row:nth-child(even) {
+  background: rgb(56.5724137931, 63.1, 69.6275862069);
+}
+.cards-list-row:nth-child(odd) {
+  background: #343a40;
+}
+.cards-list-row:hover {
+  background: rgb(65.7172413793, 73.3, 80.8827586207);
+}
+.cards-list-content {
+  background-color: #22cd12;
+  padding: 0;
+}
+
+.cards-album {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cards-album-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 504px;
+  height: 672px;
+  background: #1b1b1b;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  padding: 12px;
+}
+.cards-album-grid {
+  display: grid;
+  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-auto-rows: 1fr;
+  aspect-ratio: 3/4;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  align-content: start;
+}
+.cards-album-grid-card {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+  position: relative;
+}
+.cards-album-grid-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 60%);
+}
+.cards-album .album-page--left {
+  transform: perspective(1200px) rotateY(2deg);
+}
+.cards-album .album-page--right {
+  transform: perspective(1200px) rotateY(-2deg);
+}
+
+.card--base {
+  background: #d9d9d9;
+  border-radius: 12px;
+}
+
+.card--green {
+  background: #2ecc71;
+  border-radius: 12px;
+}
+
+.card--blue {
+  background: #3498db;
+  border-radius: 12px;
+}
+
+.card--purple {
+  background: #ae75ca;
+  border-radius: 12px;
 }
 
 .carousel-wrapper {
@@ -1890,6 +2092,628 @@ th {
 .btn-mark-received {
   background: #9b59b6;
   color: white;
+}
+
+.cards-album-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 12px;
+  background: #343a40;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.cards-album-navigation-pages {
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f6f8e6;
+}
+
+.cards-album-navigation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: #f6f8e6;
+  background: rgb(74.8620689655, 83.5, 92.1379310345);
+  transition: 0.15s ease;
+  font-size: 24px;
+}
+.cards-album-navigation-button:hover {
+  background: rgb(97.724137931, 109, 120.275862069);
+  transform: scale(1.05);
+}
+.cards-album-navigation-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none;
+}
+.cards-album-navigation-button.disabled:hover {
+  background: rgb(54.2862068966, 60.55, 66.8137931034);
+  transform: none;
+}
+
+/* =========================================
+   CHECKLIST NAVIGATION
+========================================= */
+.checklist_navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #30363d;
+}
+.checklist_navigation-button {
+  padding: 12px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+.checklist_navigation-button:hover {
+  opacity: 1;
+}
+.checklist_navigation-button.active {
+  opacity: 1;
+  color: #58a6ff;
+  border-bottom-color: #1f6feb;
+}
+
+/* =========================================
+   CHECKLIST TAB CONTENT
+========================================= */
+.checklist_content {
+  display: none;
+}
+.checklist_content.active {
+  display: block;
+}
+.checklist_content > h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+/* =========================================
+   COLLECTION CHECKLIST
+========================================= */
+.collection_checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* =========================================
+     SET / SUBSET
+  ========================================= */
+  /* =========================================
+     PARALLELS BUTTON
+  ========================================= */
+  /* =========================================
+     PLAYER ROW
+  ========================================= */
+  /* =========================================
+     CARD VARIANT
+  ========================================= */
+}
+.collection_checklist-set {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d1117;
+}
+.collection_checklist-set-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 18px;
+  background: #21262d;
+  border-bottom: 1px solid #30363d;
+}
+.collection_checklist-set-title {
+  min-width: 0;
+}
+.collection_checklist-set-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.collection_checklist-set-title > span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.55;
+}
+.collection_checklist-set .collection_checklist-row {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #30363d;
+}
+.collection_checklist-set .collection_checklist-row:last-child {
+  border-bottom: none;
+}
+.collection_checklist-parallelsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.collection_checklist-parallelsButton:hover {
+  background: #30363d;
+  border-color: #484f58;
+}
+.collection_checklist-parallelsButton:active {
+  transform: scale(0.98);
+}
+.collection_checklist-parallelsButton-count {
+  min-width: 23px;
+  height: 23px;
+  padding: 0 6px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #1f6feb;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+.collection_checklist-parallelsButton-arrow {
+  font-size: 12px;
+}
+.collection_checklist-row {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s;
+  /* HEADER */
+  /* PLAYER */
+  /* CARD NUMBER */
+  /* PLAYER INFO */
+  /* RIGHT SIDE */
+  /* ICONS */
+  /* VARIANTS COUNT */
+  /* ARROW */
+  /* =========================================
+     HIDDEN CARD VARIANTS
+  ========================================= */
+  /* =========================================
+     OPEN ROW
+  ========================================= */
+}
+.collection_checklist-row:hover {
+  border-color: #484f58;
+}
+.collection_checklist-row-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.collection_checklist-row-player {
+  display: grid;
+  grid-template-columns: 35px 65px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.collection_checklist-row-number {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.5;
+}
+.collection_checklist-row-unique {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+.collection_checklist-row-info {
+  min-width: 0;
+  text-align: left;
+}
+.collection_checklist-row-info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.collection_checklist-row-info span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+.collection_checklist-row-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.collection_checklist-row-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.collection_checklist-row-icons span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.collection_checklist-row-icons span:hover {
+  background: #30363d;
+  border-color: #484f58;
+  transform: scale(1.05);
+}
+.collection_checklist-row-count {
+  min-width: 30px;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.collection_checklist-row-arrow {
+  width: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+.collection_checklist-row-content {
+  display: none;
+  border-top: 1px solid #30363d;
+  background: #0d1117;
+}
+.collection_checklist-row.active {
+  background: #1b2028;
+}
+.collection_checklist-row.active .collection_checklist-row-content {
+  display: block;
+}
+.collection_checklist-row.active .collection_checklist-row-arrow {
+  transform: rotate(180deg);
+}
+.collection_checklist-card {
+  display: grid;
+  grid-template-columns: 70px minmax(150px, 1fr) 100px;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 18px 12px 88px;
+  border-bottom: 1px solid #21262d;
+  font-size: 13px;
+  transition: background 0.15s;
+  /* CARD NUMBER */
+  /* VARIANT NAME */
+  /* LIMIT */
+}
+.collection_checklist-card:last-child {
+  border-bottom: none;
+}
+.collection_checklist-card:hover {
+  background: #161b22;
+}
+.collection_checklist-card span:first-child {
+  opacity: 0.45;
+}
+.collection_checklist-card span:nth-child(2) {
+  font-weight: 500;
+}
+.collection_checklist-card span:last-child {
+  text-align: right;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+/* =========================================
+   TEAMS SELECT
+========================================= */
+.checklist_teams-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.checklist_teams-select {
+  min-width: 240px;
+  padding: 8px 12px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================================
+   TEAM PANELS
+========================================= */
+.team-panel {
+  display: none;
+}
+.team-panel.active {
+  display: block;
+}
+
+/* =========================================
+   DRAWER OVERLAY
+========================================= */
+.checklist_drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 998;
+}
+.checklist_drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================================
+   PARALLELS DRAWER
+========================================= */
+.checklist_drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(480px, 92vw);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #161b22;
+  border-left: 1px solid #30363d;
+  box-shadow: -12px 0 35px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+  /* HEADER */
+  /* CLOSE BUTTON */
+  /* SEARCH */
+  /* CONTENT */
+}
+.checklist_drawer.active {
+  transform: translateX(0);
+  visibility: visible;
+}
+.checklist_drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #30363d;
+}
+.checklist_drawer-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.checklist_drawer-header > div > span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+.checklist_drawer-close {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #21262d;
+  color: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.checklist_drawer-close:hover {
+  background: #30363d;
+  border-color: #484f58;
+}
+.checklist_drawer-search {
+  padding: 15px 20px;
+  border-bottom: 1px solid #30363d;
+}
+.checklist_drawer-search input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #30363d;
+  border-radius: 9px;
+  outline: none;
+  background: #0d1117;
+  color: inherit;
+}
+.checklist_drawer-search input::placeholder {
+  color: inherit;
+  opacity: 0.4;
+}
+.checklist_drawer-search input:focus {
+  border-color: #1f6feb;
+}
+.checklist_drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px 12px 24px;
+}
+
+/* =========================================
+   SINGLE PARALLEL
+========================================= */
+.checklist_parallel {
+  padding: 14px 10px;
+  border-bottom: 1px solid #30363d;
+}
+.checklist_parallel:last-child {
+  border-bottom: none;
+}
+.checklist_parallel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.checklist_parallel-header strong {
+  font-size: 14px;
+}
+.checklist_parallel-limit {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #21262d;
+  font-size: 12px;
+  font-weight: 700;
+}
+.checklist_parallel-details {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+.checklist_parallel-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 7px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+  .checklist_navigation {
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .checklist_navigation-button {
+    flex-shrink: 0;
+  }
+  .collection_checklist-set-header {
+    align-items: flex-start;
+  }
+  .collection_checklist-row-header {
+    gap: 10px;
+    padding: 12px;
+  }
+  .collection_checklist-row-right {
+    gap: 8px;
+  }
+  .collection_checklist-row-icons {
+    display: none;
+  }
+  .collection_checklist-card {
+    grid-template-columns: 55px minmax(100px, 1fr) 60px;
+    gap: 10px;
+    padding: 11px 12px;
+  }
+  .checklist_drawer {
+    width: 100%;
+  }
+  .checklist_teams-filter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .checklist_teams-select {
+    width: 100%;
+  }
+}
+.collection_checklist-teamHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+.collection_checklist-teamHeader::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #30363d;
+}
+
+.checklist_navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #30363d;
+}
+.checklist_navigation-button {
+  position: relative;
+  padding: 12px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.checklist_navigation-button:hover {
+  opacity: 1;
+  background: #21262d;
+}
+.checklist_navigation-button.active {
+  opacity: 1;
+  color: #58a6ff;
+  border-bottom-color: #1f6feb;
 }
 
 .main-mid-collectionTableAdvanced {

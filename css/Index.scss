@@ -21,16 +21,26 @@
 @use "layouts/collectionPageDescriptionCardsAmount";
 @use "layouts/collectionPageDescriptionCardsExport";
 @use "layouts/collectionPageDescriptionCollectionListTable";
+@use "layouts/collectionPageCollectionStats";
+
 @use "layouts/formSectionContainer";
 @use "layouts/test";
 @use "layouts/mainSectionContainer";
 @use "layouts/viewCollectionTable";
 @use "layouts/viewCollectionList";
+@use "layouts/viewCollectionAlbum";
 @use "layouts/getLastAddCard";
 @use "layouts/getLastAddCollection";
 @use "layouts/usersSwaps";
 @use "layouts/usersSwapsFilters";
 @use "layouts/userPageSwapProposals";
+@use "layouts/viewCollectionAlbumNavigationBar";
+
+
+@use "layouts/collectionChecklist";
+@use "layouts/generateChecklistNavigation";
+
+
 
 
 @use "pages/collection";
@@ -67,6 +77,7 @@
 @use "components/addNewCollection";
 @use "components/formGenerateCheckboxTree";
 @use "components/viewCollectionSwitcher";
+
 
 
 

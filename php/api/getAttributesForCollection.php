@@ -1,6 +1,6 @@
 <?php
 
-function getAttributesFromActiveCollection($selectedCollectionID)
+function getAttributesForCollection($selectedCollectionID)
 {
 
     global $servername, $username, $password, $dbname;
@@ -10,9 +10,9 @@ function getAttributesFromActiveCollection($selectedCollectionID)
         echo("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT attributes.ID, attributes.Name, Value
-FROM attributes, collection_attributes, attributes_values
-WHERE attributes.ID = collection_attributes.attributesID AND collection_attributes.collectionID = ?";
+    $sql = "SELECT attributes.ID, attributes.Name
+    FROM attributes, collection_attributes
+    WHERE attributes.ID = collection_attributes.attributesID AND collection_attributes.collectionID = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $selectedCollectionID);

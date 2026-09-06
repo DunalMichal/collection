@@ -44,12 +44,10 @@ function addCardToActiveCollection($selectedCollectionID)
 
         <?php
         formHiddenInput("selected_collection_ID", $selectedCollectionID);
-
         formReadOnlyInput($lastCardNumber+1, "currentCard", "Numer Karty W BD");
-
         formTextInput("card_number_in_collection", "Numer Karty W Kolekcji", true);
         formTextInput("unique_card_number_in_collection", "Unikatowy Numer", true);
-        formTextInput("card_name", "Nazwa Karty Nazwa", true);
+        formTextInput("card_name", "Nazwa Na Karcie", true);
 
         foreach ($attributesList as $attribute) {
             formSelectInput("card_attribute_" . $attribute["ID"], $attribute["Name"], $cardsAllAttributes[$attribute['ID']], true);
@@ -86,31 +84,31 @@ function addCardToActiveCollection($selectedCollectionID)
         ?>
     </form>
     <script>
-        console.log(3);
+
         const chosenParallels = document.querySelectorAll('[name^="card_variants_parallel["]');
         const chosenAutographs = document.querySelectorAll('[name^="card_variants_autograph["]');
         const chosenRelics = document.querySelectorAll('[name^="card_variants_relic["]');
 
-        chosenAutographs.forEach((chosenAutograph)=> {chosenAutograph.disabled = true;});
-        chosenRelics.forEach((chosenRelic)=> {chosenRelic.disabled = true;});
+        // chosenAutographs.forEach((chosenAutograph)=> {chosenAutograph.disabled = true;});
+        // chosenRelics.forEach((chosenRelic)=> {chosenRelic.disabled = true;});
 
 
-        chosenParallels.forEach((parallel, index) => {
-
-            parallel.addEventListener('change', () => {
-
-                if (parallel.checked) {
-                    chosenAutographs[index].disabled = false;
-                    chosenRelics[index].disabled = false;
-                } else {
-                    chosenAutographs[index].disabled = true;
-                    chosenRelics[index].disabled = true;
-
-                    chosenAutographs[index].checked = false;
-                    chosenRelics[index].checked = false;
-                }
-            });
-        });
+        // chosenParallels.forEach((parallel, index) => {
+        //
+        //     parallel.addEventListener('change', () => {
+        //
+        //         if (parallel.checked) {
+        //             chosenAutographs[index].disabled = false;
+        //             chosenRelics[index].disabled = false;
+        //         } else {
+        //             chosenAutographs[index].disabled = true;
+        //             chosenRelics[index].disabled = true;
+        //
+        //             chosenAutographs[index].checked = false;
+        //             chosenRelics[index].checked = false;
+        //         }
+        //     });
+        // });
 
     </script>
     <?php

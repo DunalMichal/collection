@@ -2,6 +2,7 @@
 include "php/layouts/header.php";
 include "php/layouts/navigation.php";
 include "php/layouts/collectionPageCollectionDescription.php";
+include "php/layouts/collectionPageCollectionStats.php";
 
 require "php/components/userPage/userPageDashboardLeftSidebar.php";
 require "php/components/userPage/userPageMainHead.php";
@@ -14,6 +15,8 @@ include "php/components/viewCollectionSwitcher.php";
 include "php/components/viewCollectionList.php";
 include "php/components/viewCollectionAlbum.php";
 include "php/components/viewCollectionTable.php";
+include "php/components/viewCollectionAlbumNavigationBar.php";
+include "php/components/generateCollectionChecklist.php";
 
 
 include "php/api/getActiveCollection.php";
@@ -23,13 +26,18 @@ include "php/api/getCardTypesInCollection.php";
 include "php/api/getCardCategoriesInCollection.php";
 
 
-
-
 include "php/api/getCollectionsList.php";
-
 include "php/api/getUserCollections.php";
 include "php/api/getCollections.php";
 include "php/api/getCollectionsInfo.php";
+include "php/api/getAttributesFromActiveCollection.php";
+
+
+require_once "php/components/generateChecklistNavigation.php";
+require_once "php/components/generateCollectionChecklist.php";
+require_once "php/components/generateChecklistRow.php";
+require_once "php/components/generateChecklistSet.php";
+require_once "php/components/generateChecklistDrawer.php";
 
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -81,21 +89,34 @@ generateHeaderMain();
 
         <div class="user_main">
             <div class="user_main-left">
-
-                Widok kolekcji
                 <?php
+                $view = $_GET['view'] ?? 'list';
                 getActiveCollectionData($selectedCollection);
-                viewCollectionSwitcher($selectedCollection);
-                getCardsFromDatabase($selectedCollection);
+//                viewCollectionSwitcher($view);
+//                generateCardsTableView($selectedCollection);
+
+
+//                switch ($view) {
+//                    case 'table':
+//                        generateCardsTableView($selectedCollection);
+//                        break;
+//
+//                    case 'album':
+//                        generateCardsAlbumView($selectedCollection);
+//                        break;
+//
+//                    case 'list':
+//                        default:
+//                        generateCardsListView($selectedCollection);
+//                        break;
+//                }
+//                getCardsFromDatabase($selectedCollection);
+//                generateCardsListView($default);
+//                generateCardsTableView($default);
+//                generateCardsAlbumView($default);
+
                 ?>
-
             </div>
-
-<!--            <div class="user_main-right">-->
-<!--                --><?php
-//                generateUserPageDashboardInfo();
-//                ?>
-<!--            </div>-->
         </div>
     </section>
 
